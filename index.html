@@ -2,18 +2,9 @@
 <html lang="hu">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>CORELLE Pilates Stúdió — Hamarosan · Kecskemét</title>
-<meta name="description" content="A CORELLE Pilates Stúdió hamarosan megnyit Kecskeméten — prémium reformer, mat és HOT pilates. Iratkozz fel, és elsőként értesülsz a nyitásról és a nyitási kedvezményekről." />
-
-<!-- Open Graph / megosztás -->
-<meta property="og:title" content="CORELLE Pilates Stúdió — Hamarosan" />
-<meta property="og:description" content="Prémium reformer, mat és HOT pilates Kecskeméten. Iratkozz fel, és elsőként értesülsz a nyitásról." />
-<meta property="og:type" content="website" />
-<meta property="og:locale" content="hu_HU" />
-<meta property="og:image" content="corelle-wordmark.png" />
-<meta name="robots" content="index,follow" />
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CORELLE Pilates Stúdió — Find your Core · Kecskemét</title>
+<meta name="description" content="CORELLE Pilates — prémium reformer, mat és HOT pilates Kecskeméten. Nőies erő, tudatos mozgás, személyre szabott figyelem. Find your Core." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -29,229 +20,632 @@
     --gold:#a87d3c;
     --gold-soft:#c9a25d;
     --gold-deep:#8c6526;
+    --dark:#161310;      /* HOT pilates / sötét blokk */
     --line:rgba(28,24,19,.13);
     --line-soft:rgba(28,24,19,.06);
-    --ok:#3f7d59;
-    --err:#a8442f;
   }
   *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
   ::selection{background:var(--ink);color:var(--paper)}
-  body{font-family:'Jost',sans-serif;color:var(--text);line-height:1.66;-webkit-font-smoothing:antialiased;
-    min-height:100svh;display:flex;align-items:center;justify-content:center;
-    padding:clamp(26px,6vw,64px);position:relative;overflow-x:hidden;
-    background:
-      radial-gradient(120% 90% at 50% -10%, rgba(201,162,93,.16), transparent 55%),
-      linear-gradient(180deg,#fdfbf8 0%, var(--paper) 46%, var(--cream) 100%);
-    background-attachment:fixed}
-  h1,h2,.disp{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:1.04;color:var(--ink)}
+  body{font-family:'Jost',sans-serif;background:var(--paper);color:var(--text);line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,h4,.disp{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:1.05;color:var(--ink)}
   a{color:inherit;text-decoration:none}
   img{display:block;max-width:100%}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+  .gold-text{background:linear-gradient(100deg,var(--gold-deep),var(--gold-soft) 50%,var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .eyebrow{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:500;display:inline-flex;align-items:center;gap:11px}
+  .eyebrow::before{content:"";width:28px;height:1px;background:var(--gold);display:inline-block}
+  .eyebrow.c{justify-content:center}
+  .arrow{display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+  .btn:hover .arrow{transform:translateX(6px)}
+  /* PRIMARY gomb = ink/fekete kontraszt (editorial), arany csak hairline/accent */
+  .btn{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--paper);font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;padding:17px 36px;border-radius:40px;transition:box-shadow .35s,transform .35s,background .35s;cursor:pointer;border:none;font-family:'Jost',sans-serif}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 18px 34px -14px rgba(28,24,19,.55)}
+  .btn.ghost{background:none;color:var(--ink);border:1px solid var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:var(--paper);box-shadow:none}
+  .btn.gold{background:linear-gradient(100deg,var(--gold-deep),var(--gold))}
+  .btn.gold:hover{box-shadow:0 18px 34px -14px rgba(150,115,55,.55)}
+  .sec{padding:128px 0}
+  .sec-head{text-align:center;max-width:680px;margin:0 auto 66px}
+  .sec-head h2{font-size:clamp(2.6rem,5.4vw,4.4rem);font-weight:300;margin-top:16px}
+  .sec-head p{color:var(--muted);margin-top:18px}
 
-  /* dekoratív keret */
-  .frame{position:fixed;inset:clamp(12px,2.4vw,26px);border:1px solid var(--line);
-    border-radius:3px;pointer-events:none;z-index:1}
-  .frame::before,.frame::after{content:"✦";position:absolute;left:50%;transform:translateX(-50%);
-    color:var(--gold);font-size:.82rem;background:var(--paper);padding:0 12px;line-height:1}
-  .frame::before{top:-.55em}
-  .frame::after{bottom:-.55em}
+  /* NAV */
+  header{position:fixed;top:0;left:0;right:0;z-index:60;transition:background .4s,box-shadow .4s}
+  header.solid{background:rgba(250,247,242,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line-soft)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:84px}
+  .brand-img{height:42px;width:auto}
+  .nav{display:flex;gap:34px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase}
+  .nav a{opacity:.82;transition:opacity .25s,color .25s}
+  .nav a:hover{opacity:1;color:var(--gold)}
+  .nav-cta{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--paper);background:var(--ink);border-radius:40px;padding:11px 24px;transition:transform .3s,box-shadow .3s}
+  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 10px 20px -10px rgba(28,24,19,.6)}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none}
+  .burger span{width:24px;height:2px;background:var(--ink);transition:.3s}
+  @media(max-width:980px){.nav,.nav-cta{display:none}.burger{display:flex}}
 
-  /* tartalom */
-  .card{position:relative;z-index:2;width:100%;max-width:600px;margin:0 auto;text-align:center;
-    display:flex;flex-direction:column;align-items:center;padding:clamp(20px,4vw,40px) 0}
+  /* mobile menu */
+  .mmenu{position:fixed;inset:0;z-index:70;background:var(--cream);transform:translateY(-100%);transition:transform .5s cubic-bezier(.6,0,.2,1);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px}
+  .mmenu.open{transform:translateY(0)}
+  .mmenu a{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:var(--ink)}
+  .mmenu .close{position:absolute;top:30px;right:32px;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);cursor:pointer}
 
-  .eyebrow{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:500;
-    display:inline-flex;align-items:center;gap:11px}
-  .eyebrow::before,.eyebrow::after{content:"";width:26px;height:1px;background:var(--gold);display:inline-block;opacity:.7}
+  /* HERO */
+  .hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;padding:88px 24px 40px;
+    background:linear-gradient(180deg,#fdfbf8 0%,var(--paper) 52%,var(--cream) 100%)}
+  .hero-brand{display:flex;flex-direction:column;align-items:center;gap:16px;max-width:100%}
+  .hero-logo{width:78vw;max-width:460px;height:auto;margin:0 auto;filter:drop-shadow(0 14px 30px rgba(150,115,55,.13))}
+  .brand-tag{font-family:'Jost',sans-serif;font-weight:400;font-size:clamp(.72rem,1.4vw,.92rem);letter-spacing:.42em;text-transform:uppercase;color:var(--gold);padding-left:.42em}
+  .hero .sub{color:var(--text);max-width:560px;margin:34px auto 0;font-size:clamp(1.05rem,2vw,1.28rem);font-weight:300;letter-spacing:.01em}
+  .hero .btn{margin-top:36px}
 
-  .brand-logo{width:auto;height:clamp(52px,9vw,70px);object-fit:contain;margin-bottom:12px;
-    filter:drop-shadow(0 12px 26px rgba(150,115,55,.14))}
-  .brand-tag{font-family:'Jost',sans-serif;font-weight:400;font-size:clamp(.7rem,1.6vw,.8rem);
-    letter-spacing:.42em;text-transform:uppercase;color:var(--gold);padding-left:.42em;margin-bottom:30px}
+  /* moodband */
+  .mood{height:60vh;min-height:420px;background:linear-gradient(120deg,var(--sand),var(--nude));display:flex;align-items:center;justify-content:center;color:rgba(28,24,19,.32);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
 
-  h1{font-size:clamp(2.5rem,8vw,4rem);font-weight:300;margin-top:24px}
-  h1 em{font-style:italic;font-weight:400;
-    background:linear-gradient(100deg,var(--gold-deep),var(--gold-soft) 55%,var(--gold));
-    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
-  .lead{color:var(--muted);margin-top:22px;font-size:clamp(1rem,2.4vw,1.12rem);font-weight:300;max-width:44ch}
-  .disciplines{margin-top:20px;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep)}
+  /* ABOUT */
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:84px;align-items:center}
+  .about .photo{aspect-ratio:4/5;background:linear-gradient(160deg,var(--sand),var(--nude));border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:rgba(28,24,19,.32);font-size:.8rem}
+  .about h2{font-size:clamp(2.4rem,4.6vw,3.7rem);font-weight:300;margin-top:18px}
+  .about p{color:var(--muted);margin-top:22px;max-width:50ch}
+  .about .btn{margin-top:34px}
+  @media(max-width:980px){.about{grid-template-columns:1fr;gap:40px}}
 
-  .divider{display:inline-flex;align-items:center;gap:14px;margin:30px 0 28px;color:var(--gold);font-size:.9rem}
-  .divider::before,.divider::after{content:"";height:1px;width:56px;background:var(--line)}
+  /* CLASSES — animált fülek */
+  .classes{background:linear-gradient(180deg,var(--paper),var(--cream))}
+  .tablist{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:48px}
+  .tab-wrap{position:relative;display:inline-flex}
+  .tab{font-family:'Jost',sans-serif;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:none;border:1px solid var(--line);border-radius:40px;padding:13px 24px;cursor:pointer;transition:all .3s ease}
+  .tab:hover{border-color:var(--gold);color:var(--gold-deep)}
+  /* HOT — kiemelt fül (arany, nem sötét) */
+  .tab.hot{border-color:var(--gold);color:var(--gold-deep);font-weight:500;
+    background:linear-gradient(100deg,rgba(201,162,93,.18),rgba(168,125,60,.08));
+    box-shadow:0 8px 20px -12px rgba(168,125,60,.6)}
+  .tab.hot:hover{border-color:var(--gold-deep)}
+  .tab .hot-badge{display:inline-block;margin-left:8px;font-size:.55rem;letter-spacing:.12em;font-weight:500;
+    background:linear-gradient(100deg,var(--gold-deep),var(--gold-soft));color:#fff;
+    padding:3px 9px;border-radius:20px;vertical-align:middle;text-transform:uppercase}
+  .tab.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  /* hover-lenyíló mini-leírás */
+  .tab-hint{position:absolute;top:100%;left:50%;padding-top:14px;width:clamp(232px,24vw,292px);
+    transform:translateX(-50%) translateY(6px);opacity:0;visibility:hidden;pointer-events:none;z-index:30;
+    transition:opacity .28s ease,transform .3s cubic-bezier(.2,.7,.2,1)}
+  .tab-hint.hot-hint{width:clamp(250px,27vw,326px)}
+  .tab-wrap:hover .tab-hint,.tab-wrap:focus-within .tab-hint{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+  .hint-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;text-align:left;
+    padding:15px 17px;box-shadow:0 24px 46px -24px rgba(28,24,19,.45),0 4px 14px -8px rgba(28,24,19,.16)}
+  .hint-card::before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%) rotate(45deg);
+    width:12px;height:12px;background:#fff;border-left:1px solid var(--line);border-top:1px solid var(--line)}
+  .hot-hint .hint-card{border-color:var(--gold)}
+  .hot-hint .hint-card::before{border-color:var(--gold)}
+  .hint-card .h-type{display:block;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);font-weight:500;margin-bottom:7px}
+  .hint-card p{font-family:'Jost',sans-serif;font-size:.83rem;line-height:1.55;color:var(--muted);margin:0}
+  .hint-card p b{color:var(--gold-deep);font-weight:500}
+  @media(hover:none){.tab-hint{display:none}}
+  .panels{max-width:920px;margin:0 auto;position:relative}
+  .panel{display:none}
+  .panel.active{display:grid}
+  .panel{grid-template-columns:1fr 1.1fr;gap:60px;align-items:center;animation:fadeUp .55s cubic-bezier(.2,.7,.2,1)}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+  .panel .pimg{aspect-ratio:5/4;background:linear-gradient(160deg,var(--cream),var(--nude));border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:rgba(28,24,19,.3);font-size:.78rem;border-radius:4px}
+  .panel .tag{font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+  .panel h3{font-size:clamp(2rem,4vw,3rem);font-weight:300;margin-top:10px}
+  .panel p{color:var(--muted);margin-top:20px}
+  @media(max-width:880px){.panel.active{grid-template-columns:1fr}.panel{gap:30px}}
 
-  /* feliratkozás */
-  form.sub{display:flex;gap:10px;width:100%;max-width:470px}
-  input[type=email]{flex:1;width:100%;font-family:'Jost',sans-serif;font-size:16px;color:var(--ink);
-    background:#fff;border:1px solid var(--line);border-radius:44px;padding:16px 22px;text-align:center;
-    transition:border-color .25s,box-shadow .25s}
-  input[type=email]::placeholder{color:#b6a892}
-  input[type=email]:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,93,.16)}
-  button.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;white-space:nowrap;
-    background:var(--ink);color:var(--paper);font-family:'Jost',sans-serif;
-    font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;
-    padding:16px 30px;border-radius:44px;border:none;cursor:pointer;
-    transition:transform .3s,box-shadow .3s,opacity .3s}
-  button.btn:hover{transform:translateY(-2px);box-shadow:0 16px 30px -14px rgba(28,24,19,.55)}
-  button.btn:disabled{opacity:.55;cursor:default;transform:none;box-shadow:none}
-  .btn .arrow{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
-  .btn:hover .arrow{transform:translateX(5px)}
+  /* INSTRUCTORS — egy oktató */
+  .team{background:var(--paper)}
+  .solo{max-width:760px;margin:0 auto;display:grid;grid-template-columns:.85fr 1fr;gap:56px;align-items:center}
+  .solo .ph{aspect-ratio:3/4;background:linear-gradient(160deg,var(--sand),var(--nude));border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:rgba(28,24,19,.3);font-size:.75rem;border-radius:4px}
+  /* fotók a placeholder-helyeken */
+  img.mood,.about img.photo,.panel img.pimg,.solo img.ph{object-fit:cover;width:100%;display:block;color:transparent}
+  .panel img.pimg.hot-img{filter:saturate(1.07) sepia(.12) brightness(.97)}
+  .solo h3{font-size:clamp(2rem,4vw,2.8rem);font-weight:300;margin-top:8px}
+  .solo .role{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:14px;display:block}
+  .solo p{color:var(--muted);margin-top:20px;max-width:42ch}
+  @media(max-width:780px){.solo{grid-template-columns:1fr;gap:30px;max-width:420px}}
 
-  .note{margin-top:16px;font-size:.82rem;color:var(--muted);max-width:42ch}
-  .msg{margin-top:14px;font-size:.94rem;min-height:1.2em;display:none}
-  .msg.show{display:block}
-  .msg.ok{color:var(--ok)}
-  .msg.err{color:var(--err)}
+  /* BOOKING band — világos, meleg (nincs sötét barna blokk) */
+  .booking{position:relative;text-align:center;overflow:hidden;
+    background:linear-gradient(150deg,var(--cream),var(--nude))}
+  .booking::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 120% at 50% -10%,rgba(201,162,93,.16),transparent 60%);pointer-events:none}
+  .booking .wrap{position:relative}
+  .booking h2{font-size:clamp(2.4rem,5vw,3.9rem);font-weight:300;margin-top:16px}
+  .booking p{color:var(--muted);max-width:52ch;margin:20px auto 0}
+  .booking .btn{margin-top:36px}
 
-  /* siker-állapot */
-  .done{display:none;flex-direction:column;align-items:center}
-  .done.show{display:flex;animation:fadeUp .55s cubic-bezier(.2,.7,.2,1)}
-  form.sub.hide,.note.hide{display:none}
-  .done .check{width:54px;height:54px;border-radius:50%;border:1px solid var(--gold);
-    display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.5rem;margin-bottom:18px}
-  .done h2{font-size:clamp(1.7rem,5vw,2.4rem);font-weight:300}
-  .done p{color:var(--muted);margin-top:12px;max-width:40ch}
-  @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+  /* PRICING */
+  .pricenote{max-width:760px;margin:0 auto 40px;text-align:center;background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:16px 24px;font-size:.95rem;color:var(--ink)}
+  .pricenote b{color:var(--gold-deep)}
+  .plans3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .plan{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:40px 34px;transition:transform .35s,box-shadow .35s}
+  .plan:hover{transform:translateY(-6px);box-shadow:0 24px 50px -28px rgba(28,24,19,.4)}
+  .plan.feat{background:linear-gradient(170deg,var(--cream),var(--nude));border-color:transparent}
+  .plan .cat{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:400;padding-bottom:22px;border-bottom:1px solid var(--line)}
+  .plan .cat small{display:block;font-family:'Jost';font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+  .pricelist{list-style:none;margin-top:8px}
+  .pricelist li{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:16px 0;border-bottom:1px solid var(--line-soft)}
+  .pricelist li:last-child{border-bottom:none}
+  .pricelist span{color:var(--muted);font-size:.96rem}
+  .pricelist b{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.5rem;white-space:nowrap;color:var(--ink)}
+  @media(max-width:880px){.plans3{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
 
-  /* Instagram — kiemelve */
-  .follow-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px;
-    margin-top:40px;padding-top:28px;border-top:1px solid var(--line-soft);width:100%;max-width:470px}
-  .follow-row .lbl{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
-  .ig-btn{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--gold);color:var(--gold-deep);
-    padding:12px 24px;border-radius:44px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
-    transition:transform .3s,box-shadow .3s,background .3s,color .3s,border-color .3s}
-  .ig-btn:hover{background:linear-gradient(100deg,var(--gold-deep),var(--gold));color:#fff;border-color:transparent;
-    transform:translateY(-2px);box-shadow:0 14px 28px -14px rgba(150,115,55,.55)}
-  .ig-btn svg{width:19px;height:19px}
+  /* FAQ */
+  .faq{max-width:840px;margin:0 auto}
+  details{border-bottom:1px solid var(--line)}
+  summary{list-style:none;cursor:pointer;padding:26px 4px;display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--ink)}
+  summary::-webkit-details-marker{display:none}
+  summary .pl{color:var(--gold);font-size:1.4rem;transition:transform .3s;font-family:'Jost'}
+  details[open] summary .pl{transform:rotate(45deg)}
+  details p{color:var(--muted);padding:0 4px 26px;max-width:70ch}
 
-  .copyr{margin-top:34px;font-size:.72rem;letter-spacing:.06em;color:var(--muted)}
+  /* LOCATION */
+  .location{background:var(--cream)}
+  .loc-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:center}
+  .loc-grid .addr{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:300;margin-top:14px;color:var(--ink)}
+  .loc-grid .addr-sub{color:var(--muted);margin-top:14px}
+  .map{aspect-ratio:4/3;border:1px solid var(--line);border-radius:8px;width:100%;filter:grayscale(.25) contrast(1.02)}
+  @media(max-width:880px){.loc-grid{grid-template-columns:1fr;gap:34px}}
 
-  /* ===== MOBIL ===== */
-  @media(max-width:560px){
-    form.sub{flex-direction:column;gap:12px}
-    button.btn{padding:16px 30px}
-    h1{margin-top:18px}
-    .lead{margin-top:16px}
-    .brand-tag{margin-bottom:22px}
-    .divider{margin:24px 0 22px}
-    .divider::before,.divider::after{width:42px}
-    .follow-row{margin-top:32px;padding-top:22px}
-    .copyr{margin-top:26px}
+  /* CONTACT */
+  .contact{background:var(--paper)}
+  .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:start}
+  .cform{display:flex;flex-direction:column;gap:18px}
+  .cform label{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:-10px}
+  .cform input,.cform textarea{font-family:'Jost',sans-serif;font-size:1rem;color:var(--ink);background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:15px 18px;transition:border-color .25s,background .25s;resize:vertical}
+  .cform input:focus,.cform textarea:focus{outline:none;border-color:var(--gold);background:#fff}
+  .cform textarea{min-height:140px}
+  .cform .btn{align-self:flex-start;margin-top:6px}
+  .cinfo .row{padding:22px 0;border-top:1px solid var(--line)}
+  .cinfo .row:first-child{border-top:none}
+  .cinfo .lbl{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+  .cinfo .val{font-family:'Cormorant Garamond',serif;font-size:1.5rem;margin-top:6px;color:var(--ink)}
+  .cinfo .val.sm{font-size:1.1rem;font-family:'Jost';color:var(--muted)}
+  .cinfo a.val{transition:color .25s}
+  .cinfo a.val:hover{color:var(--gold)}
+  .ig-link{display:inline-flex;align-items:center;gap:10px;margin-top:6px;color:var(--ink);transition:color .25s}
+  .ig-link:hover{color:var(--gold)}
+  .ig-link svg{width:22px;height:22px}
+  @media(max-width:880px){.contact-grid{grid-template-columns:1fr;gap:40px}}
+
+  /* FOOTER */
+  footer{background:var(--ink);color:#e9ddc8;padding:80px 0 40px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px}
+  .foot-logo{height:44px;width:auto}
+  .foot .brand-tag{display:block;margin-top:14px}
+  .foot-tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;margin-top:12px;color:var(--gold-soft)}
+  .foot h5{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+  .foot a{display:flex;align-items:center;gap:10px;color:rgba(233,221,200,.7);padding:6px 0;transition:color .25s;font-size:.92rem}
+  .foot a:hover{color:#fff}
+  .foot a svg{width:18px;height:18px}
+  .foot-bottom{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:60px;padding-top:26px;border-top:1px solid rgba(233,221,200,.16);font-size:.74rem;color:rgba(233,221,200,.5)}
+  @media(max-width:780px){.foot-grid{grid-template-columns:1fr;gap:36px}}
+
+  /* ===== MOBIL OPTIMALIZÁLÁS ===== */
+  @media(max-width:600px){
+    .wrap{padding:0 22px}
+    .sec{padding:78px 0}
+    .sec-head{margin-bottom:42px}
+    .sec-head h2{font-size:clamp(2.2rem,9vw,3rem)}
+    .sec-head p{font-size:.95rem}
+    /* hero */
+    .hero{padding:96px 22px 48px}
+    .hero .sub{font-size:1.06rem;margin-top:26px}
+    .hero .btn{margin-top:30px}
+    /* gomb + eyebrow */
+    .btn{padding:15px 28px;font-size:.72rem}
+    .eyebrow{font-size:.64rem;letter-spacing:.28em}
+    /* about */
+    .about{gap:30px}
+    .about h2{font-size:clamp(2rem,8vw,2.6rem)}
+    .about p{margin-top:16px}
+    /* óratípus fülek */
+    .tablist{gap:8px;margin-bottom:34px}
+    .tab{padding:10px 15px;font-size:.62rem;letter-spacing:.1em}
+    .panel h3{font-size:clamp(1.7rem,7vw,2.2rem)}
+    .panel .pimg{order:-1}
+    .panel p{margin-top:14px;font-size:.98rem}
+    /* oktató */
+    .solo{gap:24px}
+    .solo .ph{max-width:280px;margin:0 auto;width:100%}
+    /* booking */
+    .booking h2{font-size:clamp(2rem,8.5vw,2.8rem)}
+    /* árak */
+    .pricenote{font-size:.9rem;padding:14px 18px;margin-bottom:30px}
+    .plan{padding:30px 24px}
+    .plan .cat{font-size:1.6rem;padding-bottom:18px}
+    .pricelist li{padding:13px 0}
+    .pricelist span{font-size:.9rem}
+    .pricelist b{font-size:1.3rem}
+    /* GYIK */
+    summary{font-size:1.22rem;padding:20px 2px}
+    details p{padding:0 2px 22px;font-size:.96rem}
+    /* helyszín + kapcsolat */
+    .loc-grid .addr{font-size:clamp(1.7rem,8vw,2.2rem)}
+    .cform input,.cform textarea{font-size:16px}  /* iOS auto-zoom ellen */
+    .cinfo .val{font-size:1.35rem}
+    /* footer */
+    footer{padding:60px 0 32px}
+    .foot-bottom{flex-direction:column;gap:8px;text-align:left}
   }
-  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 
-<div class="frame" aria-hidden="true"></div>
-
-<main class="card">
-  <img class="brand-logo" src="corelle-wordmark.png" alt="CORELLE Pilates Stúdió" />
-  <span class="brand-tag">Pilates Stúdió</span>
-
-  <span class="eyebrow">Hamarosan · Kecskemét</span>
-  <h1>Valami <em>nőies</em><br />és erős készül.</h1>
-  <p class="lead">Hamarosan megnyit a CORELLE Pilates Stúdió Kecskeméten — prémium reformer, mat és HOT pilates, személyre szabott figyelemmel.</p>
-  <div class="disciplines">Reformer · Mat · HOT Pilates</div>
-
-  <span class="divider">✦</span>
-
-  <!-- FELIRATKOZÁS -->
-  <form class="sub" id="subForm" novalidate>
-    <input type="email" id="email" name="email" placeholder="E-mail címed" autocomplete="email" required />
-    <button type="submit" class="btn" id="subBtn">Feliratkozom <span class="arrow">→</span></button>
-  </form>
-  <p class="note" id="note">Iratkozz fel, és elsőként értesülsz a nyitásról, a limitált nyitó ajánlatokról és a Corelle első köre számára elérhető lehetőségekről. Nincs spam.</p>
-  <p class="msg" id="msg" role="status" aria-live="polite"></p>
-
-  <!-- SIKER -->
-  <div class="done" id="done">
-    <div class="check">✓</div>
-    <h2>Köszönjük, hogy velünk tartasz!</h2>
-    <p>Feljegyeztük az e-mail címedet. Amint megnyitunk, te leszel az elsők között, akit értesítünk — a nyitási kedvezményekkel együtt.</p>
+<!-- NAV -->
+<header id="hdr">
+  <div class="wrap">
+    <a href="#top"><img class="brand-img" src="corelle-wordmark.png" alt="CORELLE Pilates Stúdió" /></a>
+    <nav class="nav">
+      <a href="#about">Rólunk</a>
+      <a href="#classes">Óráink</a>
+      <a href="#team">Oktatónk</a>
+      <a href="#pricing">Áraink</a>
+      <a href="#faq">GYIK</a>
+      <a href="#contact">Kapcsolat</a>
+    </nav>
+    <a href="https://corelle-app-production.up.railway.app/belepes" class="nav-cta">Bejelentkezés</a>
+    <button class="burger" id="burger" aria-label="Menü"><span></span><span></span><span></span></button>
   </div>
+</header>
 
-  <!-- INSTAGRAM -->
-  <div class="follow-row">
-    <span class="lbl">Kövess minket</span>
-    <a class="ig-btn" href="https://www.instagram.com/corellebodystudio" target="_blank" rel="noopener" aria-label="Instagram">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
-      <span>Instagram</span>
-    </a>
-  </div>
+<!-- MOBILE MENU -->
+<div class="mmenu" id="mmenu">
+  <span class="close" id="mclose">Bezár ✕</span>
+  <a href="#about">Rólunk</a>
+  <a href="#classes">Óráink</a>
+  <a href="#team">Oktatónk</a>
+  <a href="#pricing">Áraink</a>
+  <a href="#faq">GYIK</a>
+  <a href="#contact">Kapcsolat</a>
+  <a href="https://corelle-app-production.up.railway.app/belepes" style="color:var(--gold)">Bejelentkezés</a>
+</div>
 
-  <div class="copyr">© 2026 CORELLE Pilates Stúdió — Find your Core.</div>
+<main id="top">
+  <!-- HERO / NYITÓLAP -->
+  <section class="hero">
+    <div class="hero-brand">
+      <img class="hero-logo" src="corelle-wordmark.png" alt="CORELLE Pilates Stúdió" />
+      <span class="brand-tag">Pilates Stúdió</span>
+    </div>
+    <p class="sub">Prémium reformer, mat és HOT pilates Kecskeméten – fedezd fel a Corelle világát.</p>
+    <a href="#about" class="btn">Find your core! <span class="arrow">→</span></a>
+  </section>
+
+  <!-- MOOD BAND -->
+  <img class="mood" src="img/mood.jpg" alt="CORELLE Pilates stúdió — Kecskemét" loading="lazy" />
+
+  <!-- RÓLUNK -->
+  <section class="sec" id="about">
+    <div class="wrap about">
+      <img class="photo" src="img/about.jpg" alt="Reformer pilates a Corelle stúdióban" loading="lazy" />
+      <div>
+        <span class="eyebrow">Rólunk</span>
+        <h2>Több, mint<br />egy edzésforma</h2>
+        <p>A Corelle-ben a pilates több, mint egy edzésforma. Tudatos kapcsolódás önmagadhoz, nőies erő, figyelem és egy olyan életérzés, amelyben a mozgás egyszerre formál, erősít és egyensúlyba hoz.</p>
+        <p>Oktatóink személyre szabott figyelemmel, szakmai tudással és valódi jelenléttel támogatják a fejlődésedet, hogy minden órán biztonságban, magabiztosan és kapcsolódva tudj mozogni.</p>
+        <p>A Corelle-be nemcsak edzeni érkezel. Egy olyan közösség részévé válsz, ahol a test, a lélek és az önazonos női energia egyszerre kap teret.</p>
+        <a href="#booking" class="btn ghost">Légy a Corelle stúdió tagja! <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÓRATÍPUSOK — animált fülek -->
+  <section class="sec classes" id="classes">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow c">Óratípusok</span>
+        <h2>Válaszd a hozzád illőt</h2>
+        <p>Válassz egy órát, és nézd meg a részleteit.</p>
+      </div>
+
+      <div class="tablist" role="tablist">
+        <div class="tab-wrap">
+          <button class="tab active" data-tab="0">Reformer All Levels</button>
+          <div class="tab-hint" role="tooltip"><div class="hint-card">
+            <span class="h-type">Reformer · Alapóra</span>
+            <p>Rugós reformer gépen végzett, jól követhető, teljes testes óra. A gyakorlatok minden szinthez igazíthatók — kezdőnek, újrakezdőnek és haladónak is ideális belépő.</p>
+          </div></div>
+        </div>
+        <div class="tab-wrap">
+          <button class="tab" data-tab="1">Reformer Strength</button>
+          <div class="tab-hint" role="tooltip"><div class="hint-card">
+            <span class="h-type">Reformer · Erő</span>
+            <p>Reformer erőfókusszal: core, tartás és izomtónus. Lassabb, precíz, intenzívebb izommunka azoknak, akik komolyabb terhelést keresnek.</p>
+          </div></div>
+        </div>
+        <div class="tab-wrap">
+          <button class="tab" data-tab="2">Reformer Booty Burn</button>
+          <div class="tab-hint" role="tooltip"><div class="hint-card">
+            <span class="h-type">Reformer · Alsótest</span>
+            <p>Célzottan az alsótestre — far, comb, lábak. Dinamikus, mégis kontrollált óra a reformer ellenállásával, formás és erős lábakért.</p>
+          </div></div>
+        </div>
+        <div class="tab-wrap">
+          <button class="tab" data-tab="3">Mat Pilates</button>
+          <div class="tab-hint" role="tooltip"><div class="hint-card">
+            <span class="h-type">Szőnyeg · Gép nélkül</span>
+            <p>Klasszikus pilates a szőnyegen, gép nélkül. Core-erősítés, testtartásjavítás és stabilitás egy letisztult, hatékony órában.</p>
+          </div></div>
+        </div>
+        <div class="tab-wrap">
+          <button class="tab hot" data-tab="4">HOT Pilates <span class="hot-badge">Népszerű</span></button>
+          <div class="tab-hint hot-hint" role="tooltip"><div class="hint-card">
+            <span class="h-type">Melegített terem</span>
+            <p>Felfűtött teremben végzett, energikus, izzasztó pilates — a pilates kontrolljával és fókuszával. Kecskeméten nálunk érhető el <b>elsőként</b>, és az egyik <b>legnépszerűbb</b> óránk: intenzív, méregtelenítő és felszabadító.</p>
+          </div></div>
+        </div>
+      </div>
+
+      <div class="panels">
+        <div class="panel active" data-panel="0">
+          <img class="pimg" src="img/reformer-all.jpg" alt="Reformer All Levels óra" loading="lazy" />
+          <div>
+            <h3>Reformer All Levels</h3>
+            <p>A reformer pilates tökéletes belépőpontja, ugyanakkor minden fejlettségi szint számára ajánlott óra. Jól követhető, teljes testes mozgás, ahol a gyakorlatok az egyéni tapasztalathoz és terhelhetőséghez igazíthatók, így kezdőknek, újrakezdőknek és gyakorlottabb vendégeknek is ideális választás.</p>
+          </div>
+        </div>
+
+        <div class="panel" data-panel="1">
+          <img class="pimg" src="img/strength.jpg" alt="Reformer Strength óra" loading="lazy" />
+          <div>
+            <h3>Reformer Strength</h3>
+            <p>A Reformer Strength az erő, a stabilitás és a kontrollált terhelés köré épül. Fókuszban a core, a tartás, az izomtónus és a tudatos, precíz izommunka. Azoknak ajánljuk, akik szeretik a fókuszáltabb, intenzívebb órákat, ahol a mozdulatok mögött valódi erő épül.</p>
+          </div>
+        </div>
+
+        <div class="panel" data-panel="2">
+          <img class="pimg" src="img/booty.jpg" alt="Reformer Booty Burn óra" loading="lazy" />
+          <div>
+            <h3>Reformer Booty Burn</h3>
+            <p>A Reformer Booty Burn célzottan az alsótest formálására fókuszál, különös hangsúllyal a farizomra, a combokra és a lábak stabil erejére. Dinamikusabb, mégis kontrollált óra, amelyben a reformer ellenállása és a tudatos mozgás találkozik, hogy nőies, erős és tónusos alsótestet építsen.</p>
+          </div>
+        </div>
+
+        <div class="panel" data-panel="3">
+          <img class="pimg" src="img/mat.jpg" alt="Mat Pilates óra" loading="lazy" />
+          <div>
+            <h3>Mat Pilates</h3>
+            <p>A Mat Pilates a tudatos mozgás alapja, ahol a klasszikus pilates elemeket modern, jól követhető felépítéssel ötvözzük. Core-erősítés, testtartásjavítás, stabilitás és precíz, kontrollált izommunka egy letisztult, hatékony órában.</p>
+          </div>
+        </div>
+
+        <div class="panel" data-panel="4">
+          <img class="pimg hot-img" src="img/hot.jpg" alt="HOT Pilates óra" loading="lazy" />
+          <div>
+            <h3>HOT Pilates</h3>
+            <p>Melegített teremben végzett, energikus pilates óra, amely intenzívebb élményt ad, miközben megtartja a pilates kontrollját és fókuszát. A heat, az erő és a tudatos jelenlét találkozik benne, így a mozgás egyszerre lesz dinamikus, koncentrált és igazán felszabadító.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OKTATÓNK -->
+  <section class="sec team" id="team">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow c">Oktatónk</span>
+        <h2>Aki végigkísér</h2>
+      </div>
+      <div class="solo">
+        <img class="ph" src="img/barbara.jpg" alt="Nagy Barbara — pilates oktató" loading="lazy" />
+        <div>
+          <span class="eyebrow">Corelle</span>
+          <h3>Nagy Barbara</h3>
+          <span class="role">Pilates oktató · tulajdonos</span>
+          <p>Személyre szabott figyelemmel, szakmai tudással és valódi jelenléttel kísér végig minden órán — hogy biztonságban, magabiztosan és önmagaddal kapcsolódva tudj mozogni.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÓRAREND / BEJELENTKEZÉS -->
+  <section class="sec booking" id="booking">
+    <div class="wrap">
+      <span class="eyebrow c">Órarend / Bejelentkezés</span>
+      <h2>Foglald le a helyedet</h2>
+      <p>Óráinkon előzetes bejelentkezéssel tudsz részt venni. Találd meg a hozzád illő órát, és foglald le a helyedet!</p>
+      <a href="https://corelle-app-production.up.railway.app/foglalas" class="btn">Online foglalás <span class="arrow">→</span></a>
+    </div>
+  </section>
+
+  <!-- ÁRAK -->
+  <section class="sec" id="pricing">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow c">Áraink</span>
+        <h2>Bérletek és jegyek</h2>
+      </div>
+      <div class="pricenote"><b>Fontos!</b> A 24 órán belüli lemondás fizetési kötelezettséggel jár.</div>
+      <div class="plans3">
+        <div class="plan">
+          <div class="cat">Mat / HOT Pilates</div>
+          <ul class="pricelist">
+            <li><span>1 alkalom</span><b>4&nbsp;500 Ft</b></li>
+            <li><span>4 alkalmas bérlet</span><b>16&nbsp;900 Ft</b></li>
+            <li><span>8 alkalmas bérlet</span><b>31&nbsp;900 Ft</b></li>
+          </ul>
+        </div>
+        <div class="plan feat">
+          <div class="cat">Reformer</div>
+          <ul class="pricelist">
+            <li><span>1 alkalom</span><b>6&nbsp;500 Ft</b></li>
+            <li><span>4 alkalmas bérlet</span><b>24&nbsp;900 Ft</b></li>
+            <li><span>8 alkalmas bérlet</span><b>46&nbsp;900 Ft</b></li>
+          </ul>
+        </div>
+        <div class="plan">
+          <div class="cat">Kombinált</div>
+          <ul class="pricelist">
+            <li><span>1 reformer + 1 mat/hot</span><b>9&nbsp;900 Ft</b></li>
+            <li><span>2 reformer + 2 mat/hot</span><b>19&nbsp;900 Ft</b></li>
+            <li><span>4 reformer + 4 mat/hot</span><b>38&nbsp;900 Ft</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GYIK -->
+  <section class="sec" id="faq" style="background:var(--cream)">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow c">Gyakori kérdések</span>
+        <h2>Mielőtt jössz</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Új vendég vagyok – első óra <span class="pl">+</span></summary>
+          <p>Új vendégként az első foglalásod előre fizetéssel válik véglegessé. Az ehhez szükséges információkat az órát megelőző 1–2 napban e-mailben küldjük el számodra. A foglalásod az utalás beérkezését követően kerül visszaigazolásra. Amennyiben mégsem tudsz részt venni az órán, kérjük, jelezd felénk mielőbb. Köszönjük a megértésedet.</p>
+        </details>
+        <details>
+          <summary>Mit vigyek magammal az órára? <span class="pl">+</span></summary>
+          <p>Kényelmes edzőruhát, vizet, ezenkívül törölközőt és pilates zoknit – ha otthon felejtenéd, nálunk is beszerezheted.</p>
+        </details>
+        <details>
+          <summary>Milyen fizetési lehetőségek vannak? <span class="pl">+</span></summary>
+          <p>A stúdióban készpénzes fizetésre, valamint banki átutalásra van lehetőség.</p>
+        </details>
+        <details>
+          <summary>Van lehetőség átöltözni és zuhanyozni? <span class="pl">+</span></summary>
+          <p>Igen, stúdiónkban van lehetőség átöltözni, az öltözőkben pedig zárható szekrények is a vendégek rendelkezésére állnak. Amennyiben az óra után felfrissülnél, zuhanyzási lehetőséget is biztosítunk.</p>
+        </details>
+        <details>
+          <summary>Hogyan mondhatom le a foglalásomat? <span class="pl">+</span></summary>
+          <p>A foglalásodat legkésőbb az óra kezdete előtt 24 órával tudod lemondani. A 24 órán belüli lemondás vagy a meg nem jelenés az alkalom elvesztésével járhat.</p>
+        </details>
+        <details>
+          <summary>Mikor érkezzek? <span class="pl">+</span></summary>
+          <p>Ajtóinkat az edzések ideje alatt zárva tartjuk, ezért kérünk, hogy az óra előtt 10 perccel érkezz. Ekkor nyitjuk ki az ajtót, így kényelmesen lesz időd megérkezni, átöltözni és felkészülni az órára.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ITT TALÁLSZ MINKET -->
+  <section class="sec location" id="location">
+    <div class="wrap">
+      <div class="loc-grid">
+        <div>
+          <span class="eyebrow">Itt találsz minket</span>
+          <div class="addr">6000 Kecskemét,<br />Temes tér 10.</div>
+          <p class="addr-sub">Nyitvatartás: előzetes bejelentkezés alapján.</p>
+        </div>
+        <iframe class="map" title="CORELLE Pilates – Kecskemét, Temes tér 10."
+          src="https://www.google.com/maps?q=Kecskem%C3%A9t%2C%20Temes%20t%C3%A9r%2010&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- KAPCSOLAT -->
+  <section class="sec contact" id="contact">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:48px">
+        <span class="eyebrow c">Kapcsolat</span>
+        <h2>Írj nekünk</h2>
+      </div>
+      <div class="contact-grid">
+        <!-- ŰRLAP (bal) — jelenleg mailto-fallback, később bekötjük egy űrlap-szolgáltatásra -->
+        <form class="cform" id="cform">
+          <label for="cf-name">Név</label>
+          <input id="cf-name" name="name" type="text" placeholder="A neved" required />
+          <label for="cf-email">E-mail</label>
+          <input id="cf-email" name="email" type="email" placeholder="E-mail címed" required />
+          <label for="cf-msg">Megjegyzés</label>
+          <textarea id="cf-msg" name="msg" placeholder="Miben segíthetünk?"></textarea>
+          <button type="submit" class="btn">Üzenet küldése <span class="arrow">→</span></button>
+        </form>
+        <!-- INFO (jobb) -->
+        <div class="cinfo">
+          <div class="row"><div class="lbl">Telefon</div><a class="val" href="tel:+36703402488">+36 70 340 2488</a></div>
+          <div class="row"><div class="lbl">E-mail</div><a class="val sm" href="mailto:corellepilates@gmail.com">corellepilates@gmail.com</a></div>
+          <div class="row"><div class="lbl">Cím</div><div class="val sm">6000 Kecskemét, Temes tér 10.</div></div>
+          <div class="row"><div class="lbl">Nyitvatartás</div><div class="val sm">Előzetes bejelentkezés alapján</div></div>
+          <div class="row"><div class="lbl">Kövess minket</div>
+            <!-- TODO: valós Instagram URL -->
+            <a class="ig-link" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+              <span>Instagram</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot">
+        <img class="foot-logo" src="corelle-wordmark.png" alt="CORELLE Pilates Stúdió" />
+        <span class="brand-tag">Pilates Stúdió</span>
+        <p class="foot-tag">Find your Core.</p>
+      </div>
+      <div class="foot">
+        <h5>Oldalak</h5>
+        <a href="#about">Rólunk</a>
+        <a href="#classes">Óráink</a>
+        <a href="#team">Oktatónk</a>
+        <a href="#pricing">Áraink</a>
+        <a href="#faq">GYIK</a>
+        <a href="#contact">Kapcsolat</a>
+      </div>
+      <div class="foot">
+        <h5>Kövess &amp; jogi</h5>
+        <!-- TODO: valós Instagram URL -->
+        <a href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+          Instagram
+        </a>
+        <a href="aszf.html">ÁSZF</a>
+        <a href="beleegyezo-nyilatkozat.html">Beleegyező nyilatkozat</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 CORELLE Pilates Stúdió — Find your Core. · Kecskemét</span>
+      <span>corellepilates@gmail.com · +36 70 340 2488</span>
+    </div>
+  </div>
+</footer>
+
 <script>
-  /* =========================================================
-     FELIRATKOZÁS-BEKÖTÉS
-     ---------------------------------------------------------
-     A feliratkozók egy Cloudflare Worker-be mennek, ami egy
-     KV adatbázisba menti őket (e-mail alapján dedup). A Worker
-     rendes CORS-fejléccel válaszol, így a JSON-t olvassuk és
-     valós siker/hiba visszajelzést adunk. Hálózati hiba esetén
-     mailto-fallback lép be, hogy semmi ne vesszen el.
-       Export/lista:  GET /export?token=<ADMIN_TOKEN>  (&format=csv)
-     ========================================================= */
-  const WAITLIST_ENDPOINT = "https://corelle-waitlist.aichatbotpeter.workers.dev/";
-  const FALLBACK_MAIL    = "corellepilates@gmail.com";
+  // sticky header
+  const hdr=document.getElementById('hdr');
+  const onScroll=()=>hdr.classList.toggle('solid',window.scrollY>40);
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
 
-  const form = document.getElementById('subForm');
-  const email = document.getElementById('email');
-  const btn  = document.getElementById('subBtn');
-  const note = document.getElementById('note');
-  const msg  = document.getElementById('msg');
-  const done = document.getElementById('done');
+  // mobile menu
+  const mmenu=document.getElementById('mmenu');
+  document.getElementById('burger').onclick=()=>mmenu.classList.add('open');
+  document.getElementById('mclose').onclick=()=>mmenu.classList.remove('open');
+  mmenu.querySelectorAll('a').forEach(a=>a.onclick=()=>mmenu.classList.remove('open'));
 
-  const validEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  // óratípus fülek
+  const tabs=document.querySelectorAll('.tab');
+  const panels=document.querySelectorAll('.panel');
+  tabs.forEach(t=>t.addEventListener('click',()=>{
+    const i=t.dataset.tab;
+    tabs.forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    panels.forEach(p=>p.classList.remove('active'));
+    const target=document.querySelector('.panel[data-panel="'+i+'"]');
+    // retrigger animáció
+    target.style.animation='none';target.offsetHeight;target.style.animation='';
+    target.classList.add('active');
+  }));
 
-  function showMsg(text, kind){ msg.textContent = text; msg.className = 'msg show ' + kind; }
-  function succeed(){
-    form.classList.add('hide'); note.classList.add('hide');
-    msg.classList.remove('show'); done.classList.add('show');
-  }
-
-  form.addEventListener('submit', async e => {
+  // kapcsolat űrlap — mailto fallback (később bekötjük egy űrlap-szolgáltatásra)
+  const form=document.getElementById('cform');
+  form.addEventListener('submit',e=>{
     e.preventDefault();
-    const val = email.value.trim();
-    if(!validEmail(val)){
-      showMsg('Kérlek, adj meg egy érvényes e-mail címet.', 'err');
-      email.focus(); return;
-    }
-
-    // 1) Nincs végpont → mailto-fallback (mindig működik)
-    if(!WAITLIST_ENDPOINT){
-      const subject = encodeURIComponent('Feliratkozás – CORELLE Pilates');
-      const body = encodeURIComponent('Szeretnék feliratkozni a nyitási hírekre.\n\nE-mail: ' + val);
-      window.location.href = 'mailto:' + FALLBACK_MAIL + '?subject=' + subject + '&body=' + body;
-      succeed(); return;
-    }
-
-    // 2) Van végpont → POST a Worker-re (rendes CORS, JSON válasz)
-    btn.disabled = true;
-    showMsg('Küldés…', 'ok');
-    try{
-      const res = await fetch(WAITLIST_ENDPOINT, {
-        method:'POST',
-        headers:{ 'Content-Type':'application/json' },
-        body: JSON.stringify({ email: val, source: 'hamarosan' })
-      });
-      const data = await res.json().catch(() => ({}));
-      if(res.ok && data.ok){
-        succeed();
-      }else if(data.error === 'invalid_email'){
-        btn.disabled = false;
-        showMsg('Kérlek, adj meg egy érvényes e-mail címet.', 'err');
-        email.focus();
-      }else{
-        throw new Error('bad_response');
-      }
-    }catch(err){
-      // hálózati hiba → mailto-fallback, hogy semmi ne vesszen el
-      const subject = encodeURIComponent('Feliratkozás – CORELLE Pilates');
-      const body = encodeURIComponent('Szeretnék feliratkozni a nyitási hírekre.\n\nE-mail: ' + val);
-      window.location.href = 'mailto:' + FALLBACK_MAIL + '?subject=' + subject + '&body=' + body;
-      succeed();
-    }
+    const n=encodeURIComponent(form.name.value||'');
+    const em=encodeURIComponent(form.email.value||'');
+    const m=encodeURIComponent(form.msg.value||'');
+    const body='Név: '+decodeURIComponent(n)+'%0D%0AE-mail: '+decodeURIComponent(em)+'%0D%0A%0D%0A'+decodeURIComponent(m);
+    window.location.href='mailto:corellepilates@gmail.com?subject='+encodeURIComponent('Érdeklődés – Corelle Pilates')+'&body='+body;
   });
 </script>
 </body>
