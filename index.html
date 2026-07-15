@@ -185,13 +185,14 @@
   /* =========================================================
      FELIRATKOZÁS-BEKÖTÉS
      ---------------------------------------------------------
-     WAITLIST_ENDPOINT üres → biztonságos mailto-fallback.
-     Google Sheet Apps Script /exec URL kerül ide, amint kész.
-     A küldés no-cors módban megy (az Apps Script nem küld
-     CORS-fejlécet), ezért a válasz "opaque" — ha nem dob
-     hálózati hibát, sikeresnek vesszük.
+     A feliratkozók egy Cloudflare Worker-be mennek, ami egy
+     KV adatbázisba menti őket (e-mail alapján dedup). A Worker
+     rendes CORS-fejléccel válaszol, így a JSON-t olvassuk és
+     valós siker/hiba visszajelzést adunk. Hálózati hiba esetén
+     mailto-fallback lép be, hogy semmi ne vesszen el.
+       Export/lista:  GET /export?token=<ADMIN_TOKEN>  (&format=csv)
      ========================================================= */
-  const WAITLIST_ENDPOINT = "";                 // pl. "https://script.google.com/macros/s/.../exec"
+  const WAITLIST_ENDPOINT = "https://corelle-waitlist.aichatbotpeter.workers.dev/";
   const FALLBACK_MAIL    = "corellepilates@gmail.com";
 
   const form = document.getElementById('subForm');
@@ -225,19 +226,31 @@
       succeed(); return;
     }
 
-    // 2) Van végpont → POST a Google Sheet webhookra (no-cors, egyszerű kérés → nincs preflight)
+    // 2) Van végpont → POST a Worker-re (rendes CORS, JSON válasz)
     btn.disabled = true;
     showMsg('Küldés…', 'ok');
     try{
-      await fetch(WAITLIST_ENDPOINT, {
+      const res = await fetch(WAITLIST_ENDPOINT, {
         method:'POST',
-        mode:'no-cors',
+        headers:{ 'Content-Type':'application/json' },
         body: JSON.stringify({ email: val, source: 'hamarosan' })
       });
-      succeed();
+      const data = await res.json().catch(() => ({}));
+      if(res.ok && data.ok){
+        succeed();
+      }else if(data.error === 'invalid_email'){
+        btn.disabled = false;
+        showMsg('Kérlek, adj meg egy érvényes e-mail címet.', 'err');
+        email.focus();
+      }else{
+        throw new Error('bad_response');
+      }
     }catch(err){
-      btn.disabled = false;
-      showMsg('Hoppá, valami félrement. Próbáld újra, vagy írj a ' + FALLBACK_MAIL + ' címre.', 'err');
+      // hálózati hiba → mailto-fallback, hogy semmi ne vesszen el
+      const subject = encodeURIComponent('Feliratkozás – CORELLE Pilates');
+      const body = encodeURIComponent('Szeretnék feliratkozni a nyitási hírekre.\n\nE-mail: ' + val);
+      window.location.href = 'mailto:' + FALLBACK_MAIL + '?subject=' + subject + '&body=' + body;
+      succeed();
     }
   });
 </script>
