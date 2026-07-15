@@ -73,25 +73,31 @@
     background:linear-gradient(100deg,var(--gold-deep),var(--gold-soft) 55%,var(--gold));
     -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
   .lead{color:var(--muted);margin-top:22px;font-size:clamp(1rem,2.4vw,1.12rem);font-weight:300;max-width:44ch}
-  .disciplines{margin-top:20px;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px}
-  /* HOT Pilates — kiemelt, lenyíló magyarázat */
-  .disciplines .sep{opacity:.5}
-  .hot-chip{display:inline-flex;align-items:center;gap:7px;cursor:pointer;color:var(--gold-deep);font-weight:500;
-    letter-spacing:.14em;background:linear-gradient(100deg,rgba(201,162,93,.22),rgba(168,125,60,.10));
-    border:1px solid var(--gold);border-radius:30px;padding:4px 13px;
-    transition:transform .25s,box-shadow .25s,background .25s}
-  .hot-chip:hover{transform:translateY(-1px);box-shadow:0 8px 18px -10px rgba(168,125,60,.6)}
-  .hot-chip:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-  .hot-chip .chev{width:9px;height:auto;transition:transform .3s ease;opacity:.85}
-  .hot-chip[aria-expanded="true"] .chev{transform:rotate(180deg)}
-  .hot-info{max-height:0;overflow:hidden;opacity:0;width:100%;max-width:448px;margin:0 auto;
+  .disciplines{margin-top:20px;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px}
+  .disciplines .sep{opacity:.45}
+  /* Diszciplína-chipek — kattintható/hoverelhető, lenyíló magyarázattal */
+  .disc-chip{display:inline-flex;align-items:center;gap:7px;cursor:pointer;color:var(--gold-deep);letter-spacing:.14em;
+    background:none;border:1px solid var(--line);border-radius:30px;padding:4px 13px;
+    transition:transform .25s,box-shadow .25s,background .25s,border-color .25s,color .25s}
+  .disc-chip:hover{transform:translateY(-1px);border-color:var(--gold);box-shadow:0 8px 18px -12px rgba(150,115,55,.5)}
+  .disc-chip:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  .disc-chip .chev{width:9px;height:auto;transition:transform .3s ease;opacity:.7}
+  .disc-chip[aria-expanded="true"] .chev{transform:rotate(180deg)}
+  /* HOT — kiemelt */
+  .disc-chip.hot{font-weight:500;border-color:var(--gold);
+    background:linear-gradient(100deg,rgba(201,162,93,.22),rgba(168,125,60,.10))}
+  .disc-chip.hot:hover{box-shadow:0 8px 18px -10px rgba(168,125,60,.6)}
+  .disc-chip.hot .chev{opacity:.9}
+  /* lenyíló panel */
+  .disc-info{max-height:0;overflow:hidden;opacity:0;width:100%;max-width:448px;margin:0 auto;
     transition:max-height .45s cubic-bezier(.2,.7,.2,1),opacity .35s ease,margin .35s ease}
-  .hot-info.open{max-height:380px;opacity:1;margin-top:18px}
-  .hot-card{background:#fff;border:1px solid var(--gold);border-radius:14px;padding:16px 18px;text-align:left;
-    box-shadow:0 22px 42px -22px rgba(168,125,60,.5)}
-  .hot-card .h-eyebrow{display:block;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:500;margin-bottom:8px}
-  .hot-card p{font-family:'Jost',sans-serif;font-size:.9rem;line-height:1.6;color:var(--muted);margin:0;text-transform:none;letter-spacing:normal}
-  .hot-card p b{color:var(--gold-deep);font-weight:500}
+  .disc-info.open{max-height:400px;opacity:1;margin-top:16px}
+  .disc-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;text-align:left;
+    box-shadow:0 22px 42px -24px rgba(28,24,19,.4)}
+  .disc-card.hot{border-color:var(--gold);box-shadow:0 22px 42px -22px rgba(168,125,60,.5)}
+  .disc-card .h-eyebrow{display:block;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:500;margin-bottom:8px}
+  .disc-card p{font-family:'Jost',sans-serif;font-size:.9rem;line-height:1.6;color:var(--muted);margin:0;text-transform:none;letter-spacing:normal}
+  .disc-card p b{color:var(--gold-deep);font-weight:500}
 
   .divider{display:inline-flex;align-items:center;gap:14px;margin:30px 0 28px;color:var(--gold);font-size:.9rem}
   .divider::before,.divider::after{content:"";height:1px;width:56px;background:var(--line)}
@@ -169,14 +175,35 @@
   <h1>Valami <em>nőies</em><br />és erős készül.</h1>
   <p class="lead">Hamarosan megnyit a CORELLE Pilates Stúdió Kecskeméten — prémium reformer, mat és HOT pilates, személyre szabott figyelemmel.</p>
   <div class="disciplines">
-    Reformer <span class="sep">·</span> Mat <span class="sep">·</span>
-    <span class="hot-chip" id="hotChip" role="button" tabindex="0" aria-expanded="false" aria-controls="hotInfo" aria-label="HOT Pilates — mi ez? Koppints a részletekért">
+    <span class="disc-chip" data-target="infoReformer" role="button" tabindex="0" aria-expanded="false" aria-controls="infoReformer" aria-label="Reformer — mi ez? Koppints a részletekért">
+      Reformer
+      <svg class="chev" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M1 1.6 6 6.4 11 1.6"/></svg>
+    </span>
+    <span class="sep">·</span>
+    <span class="disc-chip" data-target="infoMat" role="button" tabindex="0" aria-expanded="false" aria-controls="infoMat" aria-label="Mat pilates — mi ez? Koppints a részletekért">
+      Mat
+      <svg class="chev" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M1 1.6 6 6.4 11 1.6"/></svg>
+    </span>
+    <span class="sep">·</span>
+    <span class="disc-chip hot" data-target="infoHot" role="button" tabindex="0" aria-expanded="false" aria-controls="infoHot" aria-label="HOT Pilates — mi ez? Koppints a részletekért">
       HOT Pilates
       <svg class="chev" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M1 1.6 6 6.4 11 1.6"/></svg>
     </span>
   </div>
-  <div class="hot-info" id="hotInfo" aria-live="polite">
-    <div class="hot-card">
+  <div class="disc-info" id="infoReformer" aria-live="polite">
+    <div class="disc-card">
+      <span class="h-eyebrow">Reformer · Rugós gép</span>
+      <p>A <b>reformer</b> egy rugós ellenállású gép, amelyen a mozdulatok vezetettek és ízületkímélők. Erősít, nyújt és formál, miközben a mély hasizmok (core) végig dolgoznak — kezdőtől haladóig testre szabható.</p>
+    </div>
+  </div>
+  <div class="disc-info" id="infoMat" aria-live="polite">
+    <div class="disc-card">
+      <span class="h-eyebrow">Mat · Szőnyegen, gép nélkül</span>
+      <p>A <b>mat pilates</b> a klasszikus, szőnyegen végzett pilates: saját testsúllyal, tudatos és kontrollált gyakorlatokkal. Erős core, jobb testtartás és stabilitás — letisztult, hatékony óra bárhol.</p>
+    </div>
+  </div>
+  <div class="disc-info" id="infoHot" aria-live="polite">
+    <div class="disc-card hot">
       <span class="h-eyebrow">Melegített terem · Kecskeméten elsőként</span>
       <p>A <b>HOT Pilates</b> felfűtött teremben végzett, energikus pilates: a hő átmelegíti és ellazítja az izmokat, fokozza a keringést és a méregtelenítést, miközben végig megmarad a pilates kontrollja és fókusza. Intenzív, izzasztó és igazán felszabadító. <b>Kecskeméten nálunk érhető el elsőként</b> — egyedülálló élmény a városban.</p>
     </div>
@@ -240,20 +267,33 @@
     msg.classList.remove('show'); done.classList.add('show');
   }
 
-  /* HOT Pilates — lenyíló magyarázat (hover asztalon, koppintás mobilon) */
-  const hotChip = document.getElementById('hotChip');
-  const hotInfo = document.getElementById('hotInfo');
-  if(hotChip && hotInfo){
-    let hotSticky = false;
-    const openHot  = () => { hotInfo.classList.add('open');    hotChip.setAttribute('aria-expanded','true');  };
-    const closeHot = () => { hotInfo.classList.remove('open'); hotChip.setAttribute('aria-expanded','false'); };
-    hotChip.addEventListener('click', () => { hotSticky = !hotSticky; hotSticky ? openHot() : closeHot(); });
-    hotChip.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); hotChip.click(); } });
-    hotChip.addEventListener('mouseenter', openHot);
-    hotChip.addEventListener('mouseleave', () => { if(!hotSticky) closeHot(); });
-    hotInfo.addEventListener('mouseenter', openHot);
-    hotInfo.addEventListener('mouseleave', () => { if(!hotSticky) closeHot(); });
-  }
+  /* Diszciplína-chipek — lenyíló magyarázat (hover asztalon, koppintás mobilon); egyszerre egy nyílik */
+  (function(){
+    const chips = document.querySelectorAll('.disc-chip');
+    if(!chips.length) return;
+    const panelOf = c => document.getElementById(c.dataset.target);
+    let sticky = null;
+    const openInfo = id => chips.forEach(c => {
+      const on = c.dataset.target === id;
+      c.setAttribute('aria-expanded', on ? 'true' : 'false');
+      const p = panelOf(c); if(p) p.classList.toggle('open', on);
+    });
+    const closeAll = () => chips.forEach(c => {
+      c.setAttribute('aria-expanded','false');
+      const p = panelOf(c); if(p) p.classList.remove('open');
+    });
+    chips.forEach(chip => {
+      const id = chip.dataset.target, panel = panelOf(chip);
+      chip.addEventListener('click', () => { if(sticky === id){ sticky = null; closeAll(); } else { sticky = id; openInfo(id); } });
+      chip.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); chip.click(); } });
+      chip.addEventListener('mouseenter', () => { if(!sticky) openInfo(id); });
+      chip.addEventListener('mouseleave', () => { if(!sticky) closeAll(); });
+      if(panel){
+        panel.addEventListener('mouseenter', () => { if(!sticky) openInfo(id); });
+        panel.addEventListener('mouseleave', () => { if(!sticky) closeAll(); });
+      }
+    });
+  })();
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
