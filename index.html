@@ -91,7 +91,7 @@
   /* lenyíló panel */
   .disc-info{max-height:0;overflow:hidden;opacity:0;width:100%;max-width:448px;margin:0 auto;
     transition:max-height .45s cubic-bezier(.2,.7,.2,1),opacity .35s ease,margin .35s ease}
-  .disc-info.open{max-height:400px;opacity:1;margin-top:16px}
+  .disc-info.open{max-height:520px;opacity:1;margin-top:16px}
   .disc-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;text-align:left;
     box-shadow:0 22px 42px -24px rgba(28,24,19,.4)}
   .disc-card.hot{border-color:var(--gold);box-shadow:0 22px 42px -22px rgba(168,125,60,.5)}
@@ -175,37 +175,55 @@
   <h1>Valami <em>nőies</em><br />és erős készül.</h1>
   <p class="lead">Hamarosan megnyit a CORELLE Pilates Stúdió Kecskeméten — prémium reformer, mat és HOT pilates, személyre szabott figyelemmel.</p>
   <div class="disciplines">
-    <span class="disc-chip" data-target="infoReformer" role="button" tabindex="0" aria-expanded="false" aria-controls="infoReformer" aria-label="Reformer — mi ez? Koppints a részletekért">
-      Reformer
+    <span class="disc-chip" data-target="infoAllLevels" role="button" tabindex="0" aria-expanded="false" aria-controls="infoAllLevels" aria-label="Reformer All Levels — leírás, koppints">
+      Reformer All Levels
       <svg class="chev" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M1 1.6 6 6.4 11 1.6"/></svg>
     </span>
-    <span class="sep">·</span>
-    <span class="disc-chip" data-target="infoMat" role="button" tabindex="0" aria-expanded="false" aria-controls="infoMat" aria-label="Mat pilates — mi ez? Koppints a részletekért">
-      Mat
+    <span class="disc-chip" data-target="infoStrength" role="button" tabindex="0" aria-expanded="false" aria-controls="infoStrength" aria-label="Reformer Strength — leírás, koppints">
+      Reformer Strength
       <svg class="chev" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M1 1.6 6 6.4 11 1.6"/></svg>
     </span>
-    <span class="sep">·</span>
-    <span class="disc-chip hot" data-target="infoHot" role="button" tabindex="0" aria-expanded="false" aria-controls="infoHot" aria-label="HOT Pilates — mi ez? Koppints a részletekért">
+    <span class="disc-chip" data-target="infoBooty" role="button" tabindex="0" aria-expanded="false" aria-controls="infoBooty" aria-label="Reformer Booty Burn — leírás, koppints">
+      Reformer Booty Burn
+      <svg class="chev" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M1 1.6 6 6.4 11 1.6"/></svg>
+    </span>
+    <span class="disc-chip" data-target="infoMat" role="button" tabindex="0" aria-expanded="false" aria-controls="infoMat" aria-label="Mat Pilates — leírás, koppints">
+      Mat Pilates
+      <svg class="chev" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M1 1.6 6 6.4 11 1.6"/></svg>
+    </span>
+    <span class="disc-chip hot" data-target="infoHot" role="button" tabindex="0" aria-expanded="false" aria-controls="infoHot" aria-label="HOT Pilates — leírás, koppints">
       HOT Pilates
       <svg class="chev" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M1 1.6 6 6.4 11 1.6"/></svg>
     </span>
   </div>
-  <div class="disc-info" id="infoReformer" aria-live="polite">
+  <div class="disc-info" id="infoAllLevels" aria-live="polite">
     <div class="disc-card">
-      <span class="h-eyebrow">Reformer · Rugós gép</span>
-      <p>A <b>reformer</b> egy rugós ellenállású gép, amelyen a mozdulatok vezetettek és ízületkímélők. Erősít, nyújt és formál, miközben a mély hasizmok (core) végig dolgoznak — kezdőtől haladóig testre szabható.</p>
+      <span class="h-eyebrow">Reformer · Minden szint</span>
+      <p>A reformer pilates tökéletes belépőpontja, ugyanakkor minden fejlettségi szint számára ajánlott óra. Jól követhető, teljes testes mozgás, ahol a gyakorlatok az egyéni tapasztalathoz és terhelhetőséghez igazíthatók, így kezdőknek, újrakezdőknek és gyakorlottabb vendégeknek is ideális választás.</p>
+    </div>
+  </div>
+  <div class="disc-info" id="infoStrength" aria-live="polite">
+    <div class="disc-card">
+      <span class="h-eyebrow">Reformer · Erő &amp; stabilitás</span>
+      <p>A Reformer Strength az erő, a stabilitás és a kontrollált terhelés köré épül. Fókuszban a core, a tartás, az izomtónus és a tudatos, precíz izommunka. Azoknak ajánljuk, akik szeretik a fókuszáltabb, intenzívebb órákat, ahol a mozdulatok mögött valódi erő épül.</p>
+    </div>
+  </div>
+  <div class="disc-info" id="infoBooty" aria-live="polite">
+    <div class="disc-card">
+      <span class="h-eyebrow">Reformer · Alsótest</span>
+      <p>A Reformer Booty Burn célzottan az alsótest formálására fókuszál, különös hangsúllyal a farizomra, a combokra és a lábak stabil erejére. Dinamikusabb, mégis kontrollált óra, amelyben a reformer ellenállása és a tudatos mozgás találkozik, hogy nőies, erős és tónusos alsótestet építsen.</p>
     </div>
   </div>
   <div class="disc-info" id="infoMat" aria-live="polite">
     <div class="disc-card">
-      <span class="h-eyebrow">Mat · Szőnyegen, gép nélkül</span>
-      <p>A <b>mat pilates</b> a klasszikus, szőnyegen végzett pilates: saját testsúllyal, tudatos és kontrollált gyakorlatokkal. Erős core, jobb testtartás és stabilitás — letisztult, hatékony óra bárhol.</p>
+      <span class="h-eyebrow">Szőnyeg · Gép nélkül</span>
+      <p>A Mat Pilates a tudatos mozgás alapja, ahol a klasszikus pilates elemeket modern, jól követhető felépítéssel ötvözzük. Core-erősítés, testtartásjavítás, stabilitás és precíz, kontrollált izommunka egy letisztult, hatékony órában.</p>
     </div>
   </div>
   <div class="disc-info" id="infoHot" aria-live="polite">
     <div class="disc-card hot">
       <span class="h-eyebrow">Melegített terem · Kecskeméten elsőként</span>
-      <p>A <b>HOT Pilates</b> felfűtött teremben végzett, energikus pilates: a hő átmelegíti és ellazítja az izmokat, fokozza a keringést és a méregtelenítést, miközben végig megmarad a pilates kontrollja és fókusza. Intenzív, izzasztó és igazán felszabadító. <b>Kecskeméten nálunk érhető el elsőként</b> — egyedülálló élmény a városban.</p>
+      <p>Melegített teremben végzett, energikus pilates óra, amely intenzívebb élményt ad, miközben megtartja a pilates kontrollját és fókuszát. A heat, az erő és a tudatos jelenlét találkozik benne, így a mozgás egyszerre lesz dinamikus, koncentrált és igazán felszabadító. <b>Kecskeméten nálunk érhető el elsőként</b> — egyedülálló élmény a városban.</p>
     </div>
   </div>
 
