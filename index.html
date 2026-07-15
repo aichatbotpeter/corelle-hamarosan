@@ -98,6 +98,9 @@
   .disc-card .h-eyebrow{display:block;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:500;margin-bottom:8px}
   .disc-card p{font-family:'Jost',sans-serif;font-size:.9rem;line-height:1.6;color:var(--muted);margin:0;text-transform:none;letter-spacing:normal}
   .disc-card p b{color:var(--gold-deep);font-weight:500}
+  .disc-card .variants{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:9px}
+  .disc-card .variants li{font-family:'Jost',sans-serif;font-size:.85rem;line-height:1.5;color:var(--muted);text-transform:none;letter-spacing:normal}
+  .disc-card .variants b{color:var(--gold-deep);font-weight:500}
 
   .divider{display:inline-flex;align-items:center;gap:14px;margin:30px 0 28px;color:var(--gold);font-size:.9rem}
   .divider::before,.divider::after{content:"";height:1px;width:56px;background:var(--line)}
@@ -175,20 +178,12 @@
   <h1>Valami <em>nőies</em><br />és erős készül.</h1>
   <p class="lead">Hamarosan megnyit a CORELLE Pilates Stúdió Kecskeméten — prémium reformer, mat és HOT pilates, személyre szabott figyelemmel.</p>
   <div class="disciplines">
-    <span class="disc-chip" data-target="infoAllLevels" role="button" tabindex="0" aria-expanded="false" aria-controls="infoAllLevels" aria-label="Reformer All Levels — leírás, koppints">
-      Reformer All Levels
+    <span class="disc-chip" data-target="infoReformer" role="button" tabindex="0" aria-expanded="false" aria-controls="infoReformer" aria-label="Reformer — leírás, koppints">
+      Reformer
       <svg class="chev" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M1 1.6 6 6.4 11 1.6"/></svg>
     </span>
-    <span class="disc-chip" data-target="infoStrength" role="button" tabindex="0" aria-expanded="false" aria-controls="infoStrength" aria-label="Reformer Strength — leírás, koppints">
-      Reformer Strength
-      <svg class="chev" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M1 1.6 6 6.4 11 1.6"/></svg>
-    </span>
-    <span class="disc-chip" data-target="infoBooty" role="button" tabindex="0" aria-expanded="false" aria-controls="infoBooty" aria-label="Reformer Booty Burn — leírás, koppints">
-      Reformer Booty Burn
-      <svg class="chev" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M1 1.6 6 6.4 11 1.6"/></svg>
-    </span>
-    <span class="disc-chip" data-target="infoMat" role="button" tabindex="0" aria-expanded="false" aria-controls="infoMat" aria-label="Mat Pilates — leírás, koppints">
-      Mat Pilates
+    <span class="disc-chip" data-target="infoMat" role="button" tabindex="0" aria-expanded="false" aria-controls="infoMat" aria-label="Mat — leírás, koppints">
+      Mat
       <svg class="chev" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M1 1.6 6 6.4 11 1.6"/></svg>
     </span>
     <span class="disc-chip hot" data-target="infoHot" role="button" tabindex="0" aria-expanded="false" aria-controls="infoHot" aria-label="HOT Pilates — leírás, koppints">
@@ -196,27 +191,20 @@
       <svg class="chev" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M1 1.6 6 6.4 11 1.6"/></svg>
     </span>
   </div>
-  <div class="disc-info" id="infoAllLevels" aria-live="polite">
+  <div class="disc-info" id="infoReformer" aria-live="polite">
     <div class="disc-card">
-      <span class="h-eyebrow">Reformer · Minden szint</span>
-      <p>A reformer pilates tökéletes belépőpontja, ugyanakkor minden fejlettségi szint számára ajánlott óra. Jól követhető, teljes testes mozgás, ahol a gyakorlatok az egyéni tapasztalathoz és terhelhetőséghez igazíthatók, így kezdőknek, újrakezdőknek és gyakorlottabb vendégeknek is ideális választás.</p>
-    </div>
-  </div>
-  <div class="disc-info" id="infoStrength" aria-live="polite">
-    <div class="disc-card">
-      <span class="h-eyebrow">Reformer · Erő &amp; stabilitás</span>
-      <p>A Reformer Strength az erő, a stabilitás és a kontrollált terhelés köré épül. Fókuszban a core, a tartás, az izomtónus és a tudatos, precíz izommunka. Azoknak ajánljuk, akik szeretik a fókuszáltabb, intenzívebb órákat, ahol a mozdulatok mögött valódi erő épül.</p>
-    </div>
-  </div>
-  <div class="disc-info" id="infoBooty" aria-live="polite">
-    <div class="disc-card">
-      <span class="h-eyebrow">Reformer · Alsótest</span>
-      <p>A Reformer Booty Burn célzottan az alsótest formálására fókuszál, különös hangsúllyal a farizomra, a combokra és a lábak stabil erejére. Dinamikusabb, mégis kontrollált óra, amelyben a reformer ellenállása és a tudatos mozgás találkozik, hogy nőies, erős és tónusos alsótestet építsen.</p>
+      <span class="h-eyebrow">Reformer · Rugós gép</span>
+      <p>Rugós ellenállású gépen végzett, vezetett és ízületkímélő pilates. Nálunk három órán:</p>
+      <ul class="variants">
+        <li><b>All Levels</b> — jól követhető, teljes testes alapóra minden szintnek, kezdőtől haladóig.</li>
+        <li><b>Strength</b> — erő, stabilitás és kontrollált terhelés; fókuszban a core és a precíz izommunka.</li>
+        <li><b>Booty Burn</b> — célzottan az alsótestre (far, comb, láb); dinamikus, formáló, mégis kontrollált.</li>
+      </ul>
     </div>
   </div>
   <div class="disc-info" id="infoMat" aria-live="polite">
     <div class="disc-card">
-      <span class="h-eyebrow">Szőnyeg · Gép nélkül</span>
+      <span class="h-eyebrow">Mat · Talaj pilates</span>
       <p>A Mat Pilates a tudatos mozgás alapja, ahol a klasszikus pilates elemeket modern, jól követhető felépítéssel ötvözzük. Core-erősítés, testtartásjavítás, stabilitás és precíz, kontrollált izommunka egy letisztult, hatékony órában.</p>
     </div>
   </div>
