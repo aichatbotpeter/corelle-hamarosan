@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# A jogi oldalak nem tartoznak a keresési találatok közé (noindex a fejlécükben), de a robotok olvashatják.
+Sitemap: https://corelle.hu/sitemap.xml
