@@ -43,7 +43,7 @@
     --muted:#6f6353;
     --gold:#a87d3c;
     --gold-soft:#c9a25d;
-    --gold-deep:#8c6526;
+    --gold-deep:#8c6526;--gold-ink:#7f5c20;
     --dark:#161310;      /* HOT pilates / sötét blokk */
     --line:rgba(28,24,19,.13);
     --line-soft:rgba(28,24,19,.06);
@@ -57,7 +57,7 @@
   img{display:block;max-width:100%}
   .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
   .gold-text{background:linear-gradient(100deg,var(--gold-deep),var(--gold-soft) 50%,var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
-  .eyebrow{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-deep);font-weight:500;display:inline-flex;align-items:center;gap:11px}
+  .eyebrow{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-ink);font-weight:500;display:inline-flex;align-items:center;gap:11px}
   .eyebrow::before{content:"";width:28px;height:1px;background:var(--gold);display:inline-block}
   .eyebrow.c{justify-content:center}
   .arrow{display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
@@ -170,7 +170,7 @@
   /* fotók a placeholder-helyeken */
   .about img.photo,.solo img.ph{object-fit:cover;width:100%;display:block;color:transparent}
   .solo h3{font-size:clamp(2rem,4vw,2.8rem);font-weight:300;margin-top:8px}
-  .solo .role{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:14px;display:block}
+  .solo .role{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);margin-top:14px;display:block}
   .solo p{color:var(--muted);margin-top:20px;max-width:42ch}
   @media(max-width:780px){.solo{grid-template-columns:1fr;gap:30px;max-width:420px}}
 
@@ -190,7 +190,7 @@
 
   /* PRICING */
   .pricenote{max-width:760px;margin:0 auto 40px;text-align:center;background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:16px 24px;font-size:.95rem;color:var(--ink)}
-  .pricenote b{color:var(--gold-deep)}
+  .pricenote b,.pricenote a{color:var(--gold-ink)}
   .plans3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   .plan{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:40px 34px;transition:transform .35s,box-shadow .35s}
   .plan:hover{transform:translateY(-6px);box-shadow:0 24px 50px -28px rgba(28,24,19,.4)}
@@ -226,14 +226,14 @@
   .contact{background:var(--paper)}
   .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:start}
   .cform{display:flex;flex-direction:column;gap:18px}
-  .cform label{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:-10px}
+  .cform label{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);margin-bottom:-10px}
   .cform input,.cform textarea{font-family:'Jost',sans-serif;font-size:1rem;color:var(--ink);background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:15px 18px;transition:border-color .25s,background .25s;resize:vertical}
   .cform input:focus,.cform textarea:focus{outline:none;border-color:var(--gold);background:#fff}
   .cform textarea{min-height:140px}
   .cform .btn{align-self:flex-start;margin-top:6px}
   .cinfo .row{padding:22px 0;border-top:1px solid var(--line)}
   .cinfo .row:first-child{border-top:none}
-  .cinfo .lbl{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+  .cinfo .lbl{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-ink)}
   .cinfo .val{font-family:'Cormorant Garamond',serif;font-size:1.5rem;margin-top:6px;color:var(--ink)}
   .cinfo .val.sm{font-size:1.1rem;font-family:'Jost';color:var(--muted)}
   .cinfo a.val{transition:color .25s}
@@ -253,7 +253,7 @@
   .foot a{display:flex;align-items:center;gap:10px;color:rgba(233,221,200,.7);padding:6px 0;transition:color .25s;font-size:.92rem}
   .foot a:hover{color:#fff}
   .foot a svg{width:18px;height:18px}
-  .foot-bottom{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:60px;padding-top:26px;border-top:1px solid rgba(233,221,200,.16);font-size:.74rem;color:rgba(233,221,200,.5)}
+  .foot-bottom{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:60px;padding-top:26px;border-top:1px solid rgba(233,221,200,.16);font-size:.74rem;color:rgba(233,221,200,.62)}
   @media(max-width:780px){.foot-grid{grid-template-columns:1fr;gap:36px}}
 
   /* ===== MOBIL OPTIMALIZÁLÁS ===== */
@@ -588,7 +588,7 @@
   <!-- HERO / NYITÓLAP -->
   <section class="hero">
     <div class="hero-brand">
-      <img class="hero-logo" src="corelle-wordmark-900.webp" srcset="corelle-wordmark-450.webp 450w, corelle-wordmark-900.webp 900w" sizes="(max-width:600px) 78vw, 460px" width="460" height="114" fetchpriority="high" alt="CORELLE Pilates Stúdió, Kecskemét" />
+      <img class="hero-logo" src="corelle-wordmark-900.webp" srcset="corelle-wordmark-450.webp 450w, corelle-wordmark-640.webp 640w, corelle-wordmark-900.webp 900w" sizes="(max-width:600px) 78vw, 460px" width="460" height="114" fetchpriority="high" alt="CORELLE Pilates Stúdió, Kecskemét" />
       <span class="brand-tag">Pilates Stúdió</span>
     </div>
     <h1 class="sub">Reformer, mat és HOT pilates Kecskeméten</h1>
