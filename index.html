@@ -303,6 +303,13 @@
     footer{padding:60px 0 32px}
     .foot-bottom{flex-direction:column;gap:8px;text-align:left}
   }
+  /* galéria-előnézet a főoldalon */
+  .gsav-grid{margin-top:34px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .gsav-grid a{display:block;overflow:hidden;border-radius:6px;border:1px solid var(--line);background:var(--sand)}
+  .gsav-grid img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;transition:transform .55s ease}
+  .gsav-grid a:hover img{transform:scale(1.04)}
+  .gsav-cta{margin-top:26px;text-align:center;font-size:.9rem}
+  @media(max-width:760px){.gsav-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
 </style>
 <script type="application/ld+json">
 {
@@ -560,6 +567,7 @@
     <nav class="nav">
       <a href="#about">Rólunk</a>
       <a href="#classes">Óráink</a>
+      <a href="galeria.html">Galéria</a>
       <a href="#team">Oktatónk</a>
       <a href="#schedule">Órarend</a>
       <a href="#pricing">Áraink</a>
@@ -576,6 +584,7 @@
   <span class="close" id="mclose">Bezár ✕</span>
   <a href="#about">Rólunk</a>
   <a href="#classes">Óráink</a>
+  <a href="galeria.html">Galéria</a>
   <a href="#team">Oktatónk</a>
   <a href="#schedule">Órarend</a>
   <a href="#pricing">Áraink</a>
@@ -625,6 +634,31 @@
         <p>A Corelle-be nemcsak edzeni érkezel. Egy olyan közösség részévé válsz, ahol a test, a lélek és az önazonos női energia egyszerre kap teret.</p>
         <a href="#schedule" class="btn ghost">Légy a Corelle stúdió tagja! <span class="arrow">→</span></a>
       </div>
+    </div>
+  </section>
+
+  <!-- GALÉRIA ELŐNÉZET -->
+  <section class="sec" id="galeria">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow c">Galéria</span>
+        <h2>Nézz körül a stúdióban</h2>
+      </div>
+      <div class="gsav-grid">
+        <a href="galeria.html" aria-label="Galéria: a reformer terem">
+          <img src="galeria/corelle-06-kicsi.webp" width="760" height="507" alt="A reformer terem a CORELLE stúdióban" loading="lazy" />
+        </a>
+        <a href="galeria.html" aria-label="Galéria: pihenősarok">
+          <img src="galeria/corelle-12-kicsi.webp" width="760" height="507" alt="Pihenősarok az ablaknál" loading="lazy" />
+        </a>
+        <a href="galeria.html" aria-label="Galéria: a stúdió épülete">
+          <img src="galeria/corelle-01-kicsi.webp" width="760" height="507" alt="A stúdió épülete a Temes téren" loading="lazy" />
+        </a>
+        <a href="galeria.html" aria-label="Galéria: kiegészítők">
+          <img src="galeria/corelle-25-kicsi.webp" width="760" height="507" alt="Szőnyeg, kulacs és kiegészítők" loading="lazy" />
+        </a>
+      </div>
+      <p class="gsav-cta"><a href="galeria.html">Összes kép megtekintése →</a></p>
     </div>
   </section>
 
@@ -877,6 +911,7 @@
         <h3 class="foot-h">Oldalak</h3>
         <a href="#about">Rólunk</a>
         <a href="#classes">Óráink</a>
+        <a href="galeria.html">Galéria</a>
         <a href="#team">Oktatónk</a>
         <a href="#schedule">Órarend</a>
         <a href="#pricing">Áraink</a>
