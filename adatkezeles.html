@@ -53,6 +53,7 @@
 </style>
 <meta name="facebook-domain-verification" content="wl8he41l3wynyfkcq2845szjlecpip" />
 <script src="meta.js" defer></script>
+<script src="chat.js" defer></script>
 </head>
 <body>
 <div class="wrap">
@@ -63,7 +64,7 @@
 
 
   <h1>Adatkezelési<br />tájékoztató</h1>
-  <p class="meta">Hatályos: 2026. szeptember 11. · Módosítva: 2026. szeptember 16. (hirdetésmérés, sütik) · Ez a tájékoztató a corelle.hu weboldalon és a stúdió online foglalási felületén megadott személyes adatok kezeléséről szól.</p>
+  <p class="meta">Hatályos: 2026. szeptember 11. · Módosítva: 2026. szeptember 17. (chat-asszisztens) · Ez a tájékoztató a corelle.hu weboldalon és a stúdió online foglalási felületén megadott személyes adatok kezeléséről szól.</p>
 
   <h2><span class="no">1. szakasz</span>Az adatkezelő</h2>
   <div class="dl">
@@ -87,6 +88,12 @@
         <td>név, e-mail cím, az üzenet tartalma</td>
         <td>a megkeresés megválaszolása; jogalap: a GDPR 6. cikk (1) b) pontja szerinti szerződéskötést megelőző lépések, illetve f) pont szerinti jogos érdek (a hozzánk fordulók kiszolgálása)</td>
         <td>a megkeresés lezárását követő 1 év</td>
+      </tr>
+      <tr id="chat">
+        <th>Chat-asszisztens a weboldalon</th>
+        <td>a beszélgetés szövege; ha megadod: név, e-mail cím vagy telefonszám és a kérdésed; a böngésző technikai adatai (IP-cím, böngésző típusa)</td>
+        <td>a stúdióval, az órákkal, az árakkal és a foglalással kapcsolatos kérdések megválaszolása, és ha kéred, a kapcsolatfelvétel; jogalap: a GDPR 6. cikk (1) b) pontja szerinti szerződéskötést megelőző lépések, illetve f) pont szerinti jogos érdek (a hozzánk fordulók gyors kiszolgálása). A válaszokat mesterséges intelligencia (AI) állítja elő, erről az asszisztens is tájékoztat. Kérjük, egészségi adatot a chatben ne adj meg, ilyen kérdésben közvetlenül Barbit keresd</td>
+        <td>a beszélgetést 90 nap után automatikusan töröljük; ha kapcsolatfelvételt kérsz, az elérhetőségedet és a kérdésedet e-mailben megkapjuk, ezt a megkeresés lezárását követő 1 évig őrizzük</td>
       </tr>
       <tr>
         <th>Feliratkozás a hírekre</th>
@@ -149,11 +156,13 @@
     <thead><tr><th>Adatfeldolgozó</th><th>Feladat</th><th>Érintett adatok</th></tr></thead>
     <tbody>
       <tr><td>GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA</td><td>a weboldal üzemeltetése</td><td>a látogatás technikai adatai</td></tr>
-      <tr><td>Railway Corporation, USA</td><td>a foglalási felület és az adatbázis futtatása</td><td>regisztrációs és foglalási adatok</td></tr>
+      <tr><td>Railway Corporation, USA</td><td>a foglalási felület és az adatbázis futtatása, valamint (a PandaTalk megbízásából) a chat-asszisztens tárhelye</td><td>regisztrációs és foglalási adatok, a chat-beszélgetések</td></tr>
       <tr><td>Plus Five Five, Inc. (Resend), 2261 Market Street #5039, San Francisco, CA 94114, USA</td><td>a foglalási és értesítő e-mailek kiküldése</td><td>név, e-mail cím, a foglalás és a bérlet adatai</td></tr>
       <tr><td>Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Írország</td><td>e-mail levelezés</td><td>a levelezés tartalma</td></tr>
       <tr><td>Cloudflare, Inc., USA</td><td>a nyitás előtti feliratkozási lista tárolása</td><td>e-mail cím</td></tr>
       <tr><td>KBOSS.hu Kft. (Számlázz.hu), 1031 Budapest, Záhony utca 7.</td><td>számla kiállítása és tárolása</td><td>számlázási adatok</td></tr>
+      <tr><td>Kereskedelmi Marketing Trendek Kft. (PandaTalk), 1081 Budapest, Rákóczi út 61. 2. em. 1., adószám: 14653986-2-41</td><td>a weboldal chat-asszisztensének üzemeltetése, a kapcsolatfelvételi kérések továbbítása e-mailben</td><td>a beszélgetés szövege, a megadott elérhetőség</td></tr>
+      <tr><td>OpenAI Ireland Ltd. (Írország) / OpenAI, L.L.C. (USA), a PandaTalk további adatfeldolgozójaként</td><td>a chat-asszisztens válaszait előállító nyelvi modell</td><td>a beszélgetés szövege</td></tr>
     </tbody>
   </table>
   </div>
@@ -164,7 +173,7 @@
   <p>A Metának küldött személyes adatokat (e-mail cím, telefonszám, név, település, irányítószám, fiókazonosító) a küldés előtt a saját rendszerünkben visszafejthetetlenül titkosítjuk (SHA-256 hash).</p>
 
   <h2><span class="no">4. szakasz</span>Adattovábbítás az Európai Unión kívülre</h2>
-  <p>A weboldal és a foglalási felület kiszolgálásában részt vevő egyes szolgáltatók székhelye vagy szervere az Európai Gazdasági Térségen kívül lehet. A weboldal tárhelyét (GitHub, Inc.), a foglalási rendszert (Railway Corporation), a foglalási e-mailek kiküldését (Plus Five Five, Inc., Resend) és a feliratkozási listát (Cloudflare, Inc.) biztosító szolgáltatók az Egyesült Államokban működnek. Ha hozzájárulsz a marketing-sütikhez, a Meta Platforms Ireland Limited az adatokat az anyavállalatának (Meta Platforms, Inc., USA) is továbbíthatja. Az adattovábbítás az EU-USA adatvédelmi keretrendszerről szóló megfelelőségi határozaton alapul, ha a szolgáltató a keretrendszerhez csatlakozott, egyéb esetben az Európai Bizottság által elfogadott általános szerződési feltételeken.</p>
+  <p>A weboldal és a foglalási felület kiszolgálásában részt vevő egyes szolgáltatók székhelye vagy szervere az Európai Gazdasági Térségen kívül lehet. A weboldal tárhelyét (GitHub, Inc.), a foglalási rendszert (Railway Corporation), a foglalási e-mailek kiküldését (Plus Five Five, Inc., Resend), a feliratkozási listát (Cloudflare, Inc.) és a chat-asszisztens nyelvi modelljét (OpenAI, L.L.C.) biztosító szolgáltatók az Egyesült Államokban működnek. Ha hozzájárulsz a marketing-sütikhez, a Meta Platforms Ireland Limited az adatokat az anyavállalatának (Meta Platforms, Inc., USA) is továbbíthatja. Az adattovábbítás az EU-USA adatvédelmi keretrendszerről szóló megfelelőségi határozaton alapul, ha a szolgáltató a keretrendszerhez csatlakozott, egyéb esetben az Európai Bizottság által elfogadott általános szerződési feltételeken.</p>
 
   <h2 id="sutik"><span class="no">5. szakasz</span>Sütik és a weboldalba ágyazott tartalmak</h2>
   <p>A weboldal (corelle.hu) és a foglalási felület a működéséhez szükséges sütiket mindig használja. <b>Marketing célú sütit csak akkor helyezünk el, és a Meta mérőkódját csak akkor töltjük be, ha a süti-sávban az „Elfogadom” gombot választod.</b> Ha a „Csak a szükségesek” gombot választod, a Meta semmilyen adatot nem kap tőlünk.</p>
@@ -183,6 +192,7 @@
   </table>
   </div>
   <p>A marketing-sütik jogalapja a hozzájárulásod (a GDPR 6. cikk (1) a) pontja és az elektronikus hírközlésről szóló 2003. évi C. törvény 155. § (4) bekezdése). A hozzájárulásodat bármikor visszavonhatod az oldalak láblécében található <a href="#" data-cookie-settings>Süti-beállítások</a> linkkel: ekkor a Meta sütijeit töröljük, a mérőkód nem töltődik be többé, és a fiókodhoz tárolt Meta-azonosítókat is töröljük (bejelentkezve azonnal, egyébként a következő bejelentkezéskor). A visszavonás a korábbi adatkezelés jogszerűségét nem érinti.</p>
+  <p>A weboldalon a PandaTalk chat-asszisztense is be van ágyazva (az agents.pandatalk.hu címről töltődik be). Sütit nem helyez el; a böngésződ helyi tárhelyén (localStorage) megjegyzi a beszélgetés azonosítóját és az utolsó üzeneteket, hogy oldalváltáskor ne vesszen el a beszélgetés, valamint azt, hogy az írás előtt elfogadtad ezt a tájékoztatót. Ezek a böngésző adatainak törlésével bármikor eltávolíthatók.</p>
   <p>A weboldalon a stúdió helyét mutató Google Maps térkép van beágyazva. Ennek betöltésekor a látogató IP-címe eljut a Google-hoz, és a térkép sütiket helyezhet el. Erről a Google adatvédelmi tájékoztatója ad felvilágosítást: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>. A betűtípusokat a saját tárhelyünkről töltjük be, azokhoz külső szolgáltató nem kap adatot.</p>
 
   <h2><span class="no">6. szakasz</span>Milyen jogaid vannak</h2>
