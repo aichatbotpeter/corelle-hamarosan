@@ -196,6 +196,10 @@
   .pricenote.below .pl-prices{display:flex;flex-wrap:wrap;gap:6px 26px;margin:12px 0 10px}
   .pricenote.below .pl-prices span{display:flex;gap:10px;align-items:baseline}
   .pricenote.below .pl-prices b{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;white-space:nowrap}
+  .pricenote.below .pl-group{margin:16px 0 2px}
+  .pricenote.below .pl-lbl{display:block;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-ink)}
+  .pricenote.below .pl-lbl em{font-style:normal;letter-spacing:.03em;text-transform:none;color:var(--muted);margin-left:9px;font-size:.8rem}
+  .pricenote.below .pl-group .pl-prices{margin:7px 0 0}
   @media(max-width:880px){.pricenote.below{max-width:480px}}
   .plans3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   .plan{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:40px 34px;transition:transform .35s,box-shadow .35s}
@@ -816,13 +820,23 @@
         </div>
       </div>
       <div class="pricenote below">
-        <span class="pl-title">Egyéni magánóra</span>
-        Ha egy az egyben szeretnél haladni, vagy csak kényelmesebb a saját tempódban kezdeni, magánórára is be tudsz jönni. Ugyanaz az óra, csak neked.
-        <div class="pl-prices">
-          <span>Mat / HOT Pilates <b>6&nbsp;000 Ft</b></span>
-          <span>Reformer <b>8&nbsp;000 Ft</b></span>
+        <span class="pl-title">Egyéni és páros óra</span>
+        Ha egy az egyben szeretnél haladni, vagy ketten jönnétek együtt, arra is van lehetőség. Ugyanaz az óra, csak nektek.
+        <div class="pl-group">
+          <span class="pl-lbl">Egyéni magánóra <em>1 fő</em></span>
+          <div class="pl-prices">
+            <span>Mat / HOT Pilates <b>6&nbsp;000 Ft</b></span>
+            <span>Reformer <b>8&nbsp;000 Ft</b></span>
+          </div>
         </div>
-        Az időpontot egyeztetés alapján találjuk ki, ezért ezt nem online kell lefoglalni: <a href="#contact">írj vagy hívj</a>, és megbeszéljük, mikor jó neked.
+        <div class="pl-group">
+          <span class="pl-lbl">Páros óra <em>2 fő, a két főre együtt</em></span>
+          <div class="pl-prices">
+            <span>Mat / HOT Pilates <b>5&nbsp;500 Ft</b></span>
+            <span>Reformer <b>7&nbsp;500 Ft</b></span>
+          </div>
+        </div>
+        Az időpontot egyeztetés alapján találjuk ki, ezért ezt nem online kell lefoglalni: <a href="#contact">írj vagy hívj</a>, és megbeszéljük, mikor jó nektek.
       </div>
     </div>
   </section>
