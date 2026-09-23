@@ -191,6 +191,12 @@
   /* PRICING */
   .pricenote{max-width:760px;margin:0 auto 40px;text-align:center;background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:16px 24px;font-size:.95rem;color:var(--ink)}
   .pricenote b,.pricenote a{color:var(--gold-ink)}
+  .pricenote.below{margin:40px auto 0;text-align:left}
+  .pricenote.below .pl-title{display:block;font-family:'Cormorant Garamond',serif;font-size:1.45rem;color:var(--ink);margin-bottom:6px}
+  .pricenote.below .pl-prices{display:flex;flex-wrap:wrap;gap:6px 26px;margin:12px 0 10px}
+  .pricenote.below .pl-prices span{display:flex;gap:10px;align-items:baseline}
+  .pricenote.below .pl-prices b{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;white-space:nowrap}
+  @media(max-width:880px){.pricenote.below{max-width:480px}}
   .plans3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   .plan{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:40px 34px;transition:transform .35s,box-shadow .35s}
   .plan:hover{transform:translateY(-6px);box-shadow:0 24px 50px -28px rgba(28,24,19,.4)}
@@ -808,6 +814,15 @@
             <li><span>4 reformer + 4 mat/hot<em>a vásárlástól számított 60 napig</em></span><b>38&nbsp;900 Ft</b></li>
           </ul>
         </div>
+      </div>
+      <div class="pricenote below">
+        <span class="pl-title">Egyéni magánóra</span>
+        Ha egy az egyben szeretnél haladni, vagy csak kényelmesebb a saját tempódban kezdeni, magánórára is be tudsz jönni. Ugyanaz az óra, csak neked.
+        <div class="pl-prices">
+          <span>Mat / HOT Pilates <b>6&nbsp;500 Ft</b></span>
+          <span>Reformer <b>8&nbsp;500 Ft</b></span>
+        </div>
+        Az időpontot egyeztetés alapján találjuk ki, ezért ezt nem online kell lefoglalni: <a href="#contact">írj vagy hívj</a>, és megbeszéljük, mikor jó neked.
       </div>
     </div>
   </section>
