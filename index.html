@@ -7,23 +7,23 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <meta name="theme-color" content="#f3ece1" />
-<title>Reformer, mat és HOT pilates Kecskeméten — CORELLE Pilates Stúdió</title>
-<meta name="description" content="Reformer, mat és HOT (gépi és szőnyeges) pilates Kecskeméten, kis létszámú órákkal és személyre szabott figyelemmel. Online foglalás, bérletek, árak a CORELLE Pilates Stúdióban." />
+<title>CORELLE Pilates Kecskemét | HOT, Reformer és Mat</title>
+<meta name="description" content="Reformer legfeljebb 3 fővel. Mat és 38 °C-os HOT Pilates legfeljebb 6 fővel. Barbi órái Kecskeméten, a Temes tér 10. alatt. Órarend és foglalás." />
 <link rel="canonical" href="https://corelle.hu/" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="CORELLE Pilates Stúdió" />
 <meta property="og:locale" content="hu_HU" />
 <meta property="og:url" content="https://corelle.hu/" />
-<meta property="og:title" content="Reformer, mat és HOT pilates Kecskeméten — CORELLE Pilates Stúdió" />
-<meta property="og:description" content="Kis létszámú reformer, mat és HOT pilates órák Kecskeméten, személyre szabott figyelemmel. Online foglalás és bérletek a corelle.hu oldalon." />
+<meta property="og:title" content="CORELLE Pilates Kecskemét | HOT, Reformer és Mat" />
+<meta property="og:description" content="Reformer legfeljebb 3 fővel. Mat és 38 °C-os HOT Pilates legfeljebb 6 fővel. Barbi órái Kecskeméten, a Temes tér 10. alatt. Órarend és foglalás." />
 <meta property="og:image" content="https://corelle.hu/og/corelle-og.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="CORELLE Pilates Stúdió, Kecskemét" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Reformer, mat és HOT pilates Kecskeméten — CORELLE Pilates Stúdió" />
-<meta name="twitter:description" content="Kis létszámú órák, személyre szabott figyelem. Foglalj online a corelle.hu oldalon." />
+<meta name="twitter:title" content="CORELLE Pilates Kecskemét | HOT, Reformer és Mat" />
+<meta name="twitter:description" content="Reformer legfeljebb 3 fővel. Mat és 38 °C-os HOT Pilates legfeljebb 6 fővel. Barbi órái Kecskeméten, a Temes tér 10. alatt. Órarend és foglalás." />
 <meta name="twitter:image" content="https://corelle.hu/og/corelle-og.jpg" />
 <meta name="geo.region" content="HU-BK" />
 <meta name="geo.placename" content="Kecskemét" />
@@ -153,15 +153,18 @@
   .hint-card p b{color:var(--gold-deep);font-weight:500}
   @media(hover:none){.tab-hint{display:none}}
   @media(max-width:820px){.tab-hint{display:none}}
-  .panels{max-width:780px;margin:0 auto;position:relative}
+  .panels{max-width:900px;margin:0 auto;position:relative}
   .panel{display:none}
   .panel.active{display:block;animation:fadeUp .55s cubic-bezier(.2,.7,.2,1)}
   @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-  .panel>div{text-align:center;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:52px 46px}
+  .panel>div{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1fr);align-items:stretch;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:0;overflow:hidden}
+  .panel picture{display:block;height:100%}
+  .panel img.pimg{width:100%;height:100%;min-height:340px;object-fit:cover;display:block;color:transparent}
+  .panel .ptext{padding:44px 42px;align-self:center}
   .panel.hot-panel>div{border-color:var(--gold);background:linear-gradient(170deg,rgba(201,162,93,.10),var(--paper) 60%)}
   .panel .ptag{display:inline-block;font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-deep);font-weight:500}
-  .panel h3{font-size:clamp(2rem,4vw,3rem);font-weight:300;margin-top:12px}
-  .panel p{color:var(--muted);margin-top:20px;max-width:60ch;margin-left:auto;margin-right:auto}
+  .panel h3{font-size:clamp(1.9rem,3.2vw,2.4rem);font-weight:300;margin-top:12px}
+  .panel p{color:var(--muted);margin-top:20px;max-width:46ch}
 
   /* INSTRUCTORS — egy oktató */
   .team{background:var(--paper)}
@@ -288,7 +291,9 @@
     .tablist{gap:8px;margin-bottom:34px}
     .tab{padding:10px 15px;font-size:.62rem;letter-spacing:.1em}
     .panel h3{font-size:clamp(1.7rem,7vw,2.2rem)}
-    .panel>div{padding:32px 22px}
+    .panel>div{grid-template-columns:1fr;padding:0}
+    .panel img.pimg{aspect-ratio:4/3;height:auto;min-height:0}
+    .panel .ptext{padding:28px 22px}
     .panel p{margin-top:14px;font-size:.98rem}
     /* oktató */
     .solo{gap:24px}
@@ -320,6 +325,67 @@
   .gsav-grid a:hover img{transform:scale(1.04)}
   .gsav-cta{margin-top:26px;text-align:center;font-size:.9rem}
   @media(max-width:760px){.gsav-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
+
+  /* ═══ RITA-FÉLE ÁTALAKÍTÁS (2026-09-25) ═══════════════════════ */
+
+  /* Barbi köszöntője: ez fogadja a látogatót a hero után */
+  .hello{background:linear-gradient(180deg,var(--cream),var(--paper))}
+  .hello .wrap{display:grid;grid-template-columns:.88fr 1fr;gap:84px;align-items:center}
+  .hello img.hph{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;display:block;border:1px solid var(--line);border-radius:4px;box-shadow:0 36px 72px -48px rgba(28,24,19,.55)}
+  .hello h2{font-size:clamp(2.3rem,4.5vw,3.6rem);font-weight:300;margin-top:16px}
+  .hello p{color:var(--muted);margin-top:20px;max-width:46ch}
+  .hello p.lead{color:var(--text);font-size:1.08rem}
+  .hello .sig{margin-top:30px;font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--gold-ink);line-height:1.2}
+  .hello .sig em{display:block;font-style:normal;font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+  .hello .btn{margin-top:32px}
+  @media(max-width:980px){.hello .wrap{grid-template-columns:1fr;gap:38px}.hello img.hph{max-width:430px;margin:0 auto}}
+
+  /* mozaik galéria-előnézet: Rita legalább 10 képet kért a közegről */
+  .mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:192px;gap:12px}
+  .mosaic a{display:block;overflow:hidden;border:1px solid var(--line-soft);background:var(--sand)}
+  .mosaic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .mosaic a:hover img{transform:scale(1.06)}
+  .mosaic .tall{grid-row:span 2}
+  .mosaic .wide{grid-column:span 2}
+  @media(max-width:900px){.mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}.mosaic .wide{grid-column:span 2}}
+
+  /* HOT pilates kiemelt sötét blokk: a forgalom 80%-a erre jön */
+  .hotsec{background:var(--dark);color:#efe7da;padding:124px 0}
+  .hotsec .wrap{display:grid;grid-template-columns:1fr .82fr;gap:80px;align-items:center}
+  .hotsec .eyebrow{color:var(--gold-soft)}
+  .hotsec .eyebrow::before{background:var(--gold-soft)}
+  .hotsec h2{color:#f7f0e3;font-size:clamp(2.4rem,4.7vw,3.8rem);font-weight:300;margin-top:16px}
+  .hotsec p{color:rgba(239,231,218,.74);margin-top:20px;max-width:48ch}
+  .hotsec img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:4px}
+  .hotfacts{display:flex;flex-wrap:wrap;gap:9px;margin-top:30px}
+  .hotfacts span{border:1px solid rgba(201,162,93,.45);border-radius:40px;padding:9px 19px;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-soft)}
+  .hotsec .btn{margin-top:34px;background:linear-gradient(100deg,var(--gold-deep),var(--gold));color:#fff}
+  @media(max-width:980px){.hotsec{padding:88px 0}.hotsec .wrap{grid-template-columns:1fr;gap:38px}.hotsec img{max-width:410px;margin:0 auto}}
+
+  /* ═══ GPT-SZÖVEGCSOMAG (2026-09-26) ═══════════════════════════ */
+  .hero-eyebrow{margin-top:28px;font-weight:400;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-ink)}
+  .hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5.8vw,4.4rem);font-weight:300;line-height:1.03;margin-top:12px;color:var(--ink)}
+  .hero-meta{margin-top:20px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink)}
+  .hero-link{display:inline-block;margin-top:20px;font-size:.88rem;color:var(--muted);border-bottom:1px solid var(--line)}
+  .hero-link:hover{color:var(--gold-deep);border-color:var(--gold)}
+  @media(max-width:600px){.hero-meta{font-size:.64rem;letter-spacing:.1em}}
+
+  .pdata{margin-top:20px;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-ink)}
+  .panel .btn{margin-top:22px}
+  .pnote{margin-top:14px;font-size:.82rem;color:var(--muted)}
+  .chelp{max-width:620px;margin:40px auto 0;text-align:center;font-size:.95rem;color:var(--muted)}
+  .chelp a{color:var(--gold-ink);border-bottom:1px solid rgba(127,92,32,.45)}
+
+  .firststep{max-width:620px;margin:34px auto 0;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:24px 26px}
+  .firststep b{display:block;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--ink);margin-bottom:12px}
+  .firststep ol{margin:0;padding-left:20px;color:var(--muted);font-size:.95rem}
+  .firststep ol li{margin-bottom:7px}
+  .firststep .fs-note{margin-top:14px;font-size:.88rem;color:var(--muted)}
+
+  .finalcta{background:linear-gradient(180deg,var(--paper),var(--cream));text-align:center}
+  .finalcta h2{font-size:clamp(2.2rem,4.6vw,3.4rem);font-weight:300}
+  .finalcta p{color:var(--muted);margin-top:16px}
+  .finalcta .btn{margin-top:30px}
 </style>
 <script type="application/ld+json">
 {
@@ -343,7 +409,7 @@
   "email": "corellebodystudio@gmail.com",
   "priceRange": "4500-46900 Ft",
   "currenciesAccepted": "HUF",
-  "paymentAccepted": "Banki átutalás, készpénz",
+  "paymentAccepted": "Bankkártya, banki átutalás, készpénz",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Temes tér 10.",
@@ -501,54 +567,77 @@
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "@id": "https://corelle.hu/#gyik",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Új vendég vagyok, hogyan zajlik az első óra?",
+      "name": "Még nem pilateseztem. Melyik órával kezdjek?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Új vendégként az első foglalásod előre fizetéssel válik véglegessé. Foglaláskor azonnal e-mailben elküldjük az utaláshoz szükséges adatokat, a foglalásod pedig az utalás beérkezését követően kerül visszaigazolásra. A második alkalomtól a stúdióban készpénzzel is fizethetsz."
+        "text": "A Reformer All Levels órát kezdőként is választhatod. Megmutatom a gépet és a gyakorlatokat. Ha mat vagy HOT órán gondolkodsz, írj nekem. Segítek választani."
       }
     },
     {
       "@type": "Question",
-      "name": "Mit vigyek magammal az órára?",
+      "name": "Hogyan lesz végleges az első foglalásom?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Kényelmes edzőruhát, vizet, ezenkívül törölközőt és pilates zoknit. Ha otthon felejtenéd, nálunk is beszerezheted."
+        "text": "Az első órádat előre fizeted ki. A foglalás után e-mailben küldünk egy fizetési linket: ott bankkártyával azonnal fizethetsz, vagy átutalhatod az összeget. A helyedet a fizetés beérkezése után igazoljuk vissza."
       }
     },
     {
       "@type": "Question",
-      "name": "Milyen fizetési lehetőségek vannak?",
+      "name": "Mit hozzak magammal?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Banki átutalással, illetve a második alkalomtól a stúdióban készpénzzel is fizethetsz. Bérletet a foglalási felület Bérletek oldalán online is megrendelhetsz."
+        "text": "Kényelmes edzőruhát, vizet, törölközőt és pilates zoknit. Törölközőt és zoknit a stúdióban is vehetsz."
       }
     },
     {
       "@type": "Question",
-      "name": "Van lehetőség átöltözni és zuhanyozni?",
+      "name": "Mikor érkezzek?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Igen, a stúdióban van öltöző zárható szekrényekkel, és az óra után zuhanyzási lehetőséget is biztosítunk."
+        "text": "Az óra előtt 10 perccel. Óra közben zárva tartjuk az ajtót, ezért fontos a pontos érkezés."
       }
     },
     {
       "@type": "Question",
-      "name": "Hogyan mondhatom le a foglalásomat?",
+      "name": "Van öltöző és zuhanyzó?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A foglalásodat legkésőbb az óra kezdete előtt 24 órával tudod lemondani a fiókodban. A 24 órán belüli lemondás vagy a meg nem jelenés az alkalom elvesztésével jár."
+        "text": "Igen. Át tudsz öltözni és zárható szekrénybe teheted a holmidat. Óra után zuhanyozni is tudsz."
       }
     },
     {
       "@type": "Question",
-      "name": "Mikor érkezzek az órára?",
+      "name": "Hogyan fizethetek?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Az ajtót az edzések ideje alatt zárva tartjuk, ezért kérünk, hogy az óra előtt 10 perccel érkezz. Ekkor nyitjuk ki az ajtót, így van időd átöltözni és felkészülni."
+        "text": "Bankkártyával online, banki átutalással, a második alkalomtól pedig a stúdióban készpénzzel is fizethetsz. A kártyás fizetés azonnal jóváíródik, így a bérleted rögtön használható. Bérletet a foglalási felület Bérletek oldalán rendelhetsz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hogyan mondhatom le az órát?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A foglalásodat legkésőbb az órakezdés előtt 24 órával mondd le. A 24 órán belüli lemondás az alkalom elvesztésével jár. A lemondás részleteit a vásárlási feltételekben találod."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A HOT Pilates reformeróra?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A HOT Pilates szőnyeges óra. Reformer gépet nem használunk. A terem hőmérséklete 38 °C, az óra 50 perces és legfeljebb hatan vagytok."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Jöhetünk ketten külön órára?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen. Mat, HOT és reformer páros órát is kérhettek. Az időpontot üzenetben vagy telefonon egyeztetjük. Az árlistában a páros ár a két főre együtt szerepel."
       }
     }
   ]
@@ -577,13 +666,12 @@
   <div class="wrap">
     <a href="#top"><img class="brand-img" src="corelle-wordmark-450.webp" width="169" height="42" alt="CORELLE Pilates Stúdió" /></a>
     <nav class="nav">
-      <a href="#about">Rólunk</a>
-      <a href="#classes">Óráink</a>
-      <a href="galeria.html">Galéria</a>
-      <a href="#team">Oktatónk</a>
+      <a href="#bemutatkozas">Barbi</a>
+      <a href="#classes">Órák</a>
+      <a href="#hot">HOT Pilates</a>
+      <a href="#pricing">Árak</a>
       <a href="#schedule">Órarend</a>
-      <a href="#pricing">Áraink</a>
-      <a href="#faq">GYIK</a>
+      <a href="#elso-alkalom">Első alkalom</a>
       <a href="#contact">Kapcsolat</a>
     </nav>
     <a href="https://foglalas.corelle.hu/belepes" class="nav-cta">Bejelentkezés</a>
@@ -594,13 +682,12 @@
 <!-- MOBILE MENU -->
 <div class="mmenu" id="mmenu">
   <span class="close" id="mclose">Bezár ✕</span>
-  <a href="#about">Rólunk</a>
-  <a href="#classes">Óráink</a>
-  <a href="galeria.html">Galéria</a>
-  <a href="#team">Oktatónk</a>
+  <a href="#bemutatkozas">Barbi</a>
+  <a href="#classes">Órák</a>
+  <a href="#hot">HOT Pilates</a>
+  <a href="#pricing">Árak</a>
   <a href="#schedule">Órarend</a>
-  <a href="#pricing">Áraink</a>
-  <a href="#faq">GYIK</a>
+  <a href="#elso-alkalom">Első alkalom</a>
   <a href="#contact">Kapcsolat</a>
   <a href="https://foglalas.corelle.hu/belepes" style="color:var(--gold)">Bejelentkezés</a>
 </div>
@@ -612,21 +699,30 @@
       <img class="hero-logo" src="corelle-wordmark-900.webp" srcset="corelle-wordmark-450.webp 450w, corelle-wordmark-640.webp 640w, corelle-wordmark-900.webp 900w" sizes="(max-width:600px) 78vw, 460px" width="460" height="114" fetchpriority="high" alt="CORELLE Pilates Stúdió, Kecskemét" />
       <span class="brand-tag">Pilates Stúdió</span>
     </div>
-    <h1 class="sub">Reformer, mat és HOT pilates Kecskeméten</h1>
-    <p class="sub sub2">Prémium gépi és szőnyeges pilates, kis létszámú órákkal – fedezd fel a Corelle világát.</p>
-    <a href="#about" class="btn">Find your core! <span class="arrow">→</span></a>
+    <h1 class="hero-eyebrow">Reformer, mat és HOT Pilates Kecskeméten</h1>
+    <a href="https://foglalas.corelle.hu/foglalas" class="btn">Órarend és foglalás <span class="arrow">&rarr;</span></a>
+    <a href="#classes" class="hero-link">Melyik órát válasszam?</a>
   </section>
 
-  <!-- GÖRGETÉSRE GURULÓ KULACS: a videó ideje a sáv képernyőn való áthaladását követi -->
-  <section class="reel" id="reel" aria-label="CORELLE Pilates Stúdió">
-    <div class="reel-frame">
+  <!-- BARBI KÖSZÖNTŐJE — Rita 5/5-ös pontja: ne egy üres szőnyeg fogadjon, hanem az oktató -->
+  <section class="sec hello" id="bemutatkozas">
+    <div class="wrap">
       <picture>
-        <source media="(max-width:640px)" type="image/webp" srcset="img/roll-poster-45-900.webp" />
-        <source media="(max-width:640px)" srcset="img/roll-poster-45.jpg" />
-        <source type="image/webp" srcset="img/roll-poster-43-1400.webp" />
-        <img class="reel-poster" src="img/roll-poster-43.jpg" width="1400" height="1050" alt="CORELLE feliratú kulacs a stúdió matracán" />
+        <source type="image/webp" srcset="img/barbi-hello-800.webp 800w, img/barbi-hello-1200.webp 1200w" sizes="(max-width:980px) 92vw, 490px" />
+        <img class="hph" src="img/barbi-hello-800.jpg" srcset="img/barbi-hello-800.jpg 800w, img/barbi-hello-1200.jpg 1200w" sizes="(max-width:980px) 92vw, 490px"
+             width="1200" height="1500" decoding="async" alt="Nagy Barbara, a CORELLE Pilates Stúdió alapítója és oktatója" />
       </picture>
-      <video class="reel-video" muted playsinline preload="none" disablepictureinpicture disableremoteplayback aria-hidden="true" tabindex="-1"></video>
+      <div>
+        <span class="eyebrow">Barbi · alapító és pilatesoktató</span>
+        <h2>Szia, Barbi vagyok.</h2>
+        <p class="lead">Én vagyok a Corelle alapítója és oktatója. A mozgás gyerekkorom óta az életem része: éveken át táncoltam és atletizáltam, később a súlyzós edzés lett a mindennapjaim része.</p>
+        <p>A pilatesszel az egyetemi éveim alatt találkoztam. Eleinte csak kiegészítésnek gondoltam a súlyzós edzés mellé, de hamar sokkal több lett belőle. Beleszerettem abba, ahogy egyszerre épít erőt, tudatosságot és kapcsolatot a saját testeddel.</p>
+        <p>Ahogy egyre mélyebben beleástam magam, eldöntöttem, hogy továbbadom, amit a pilates nekem ad. Innen indult az oktatói utam. Később ebből nőtt ki a Corelle is.</p>
+        <p>Az óráimon olyan légkört szeretnék, ahol arra az 50 percre tényleg magadra tudsz figyelni. Dolgozik a tested, közben fejben is kiszakadhatsz kicsit a mindennapokból.</p>
+        
+        <div class="sig">Barbi</div>
+        <a href="#classes" class="btn ghost">Megnézem az órákat <span class="arrow">&rarr;</span></a>
+      </div>
     </div>
   </section>
 
@@ -634,17 +730,19 @@
   <section class="sec" id="about">
     <div class="wrap about">
       <picture>
-        <source type="image/webp" srcset="img/about-800.webp 800w, img/about-1200.webp 1200w" sizes="(max-width:900px) 92vw, 560px" />
-        <img class="photo" src="img/about-800.jpg" srcset="img/about-800.jpg 800w, img/about-1200.jpg 1200w" sizes="(max-width:900px) 92vw, 560px"
-             width="1200" height="1500" loading="lazy" decoding="async" alt="Reformer pilates óra a CORELLE stúdióban, Kecskeméten" />
+        <source type="image/webp" srcset="img/feel-800.webp 800w, img/feel-1200.webp 1200w" sizes="(max-width:900px) 92vw, 560px" />
+        <img class="photo" src="img/feel-800.jpg" srcset="img/feel-800.jpg 800w, img/feel-1200.jpg 1200w" sizes="(max-width:900px) 92vw, 560px"
+             width="1200" height="1500" loading="lazy" decoding="async" alt="Kandallós pihenősarok a CORELLE Pilates Stúdióban, Kecskeméten" />
       </picture>
       <div>
-        <span class="eyebrow">Rólunk</span>
-        <h2>Több, mint<br />egy edzésforma</h2>
-        <p>A Corelle-ben a pilates több, mint egy edzésforma. Tudatos kapcsolódás önmagadhoz, nőies erő, figyelem és egy olyan életérzés, amelyben a mozgás egyszerre formál, erősít és egyensúlyba hoz.</p>
-        <p>Oktatóink személyre szabott figyelemmel, szakmai tudással és valódi jelenléttel támogatják a fejlődésedet, hogy minden órán biztonságban, magabiztosan és kapcsolódva tudj mozogni.</p>
-        <p>A Corelle-be nemcsak edzeni érkezel. Egy olyan közösség részévé válsz, ahol a test, a lélek és az önazonos női energia egyszerre kap teret.</p>
-        <a href="#schedule" class="btn ghost">Légy a Corelle stúdió tagja! <span class="arrow">→</span></a>
+        <span class="eyebrow">A stúdió</span>
+        <h2>Több, mint egy<br />Pilates stúdió.</h2>
+        <p class="lead">A Corelle egy hely, ahová nemcsak edzeni érkezel, hanem kiszakadni a napból. A meleg fények, a letisztult enteriőr, a gondosan megválasztott részletek és az intim órák együtt teremtenek egy olyan közeget, ahol jó megérkezni, lelassulni és közben erősebbé válni.</p>
+        <p>Legyen szó reformerről, matról vagy HOT Pilatesről, nálunk minden óra ugyanarról szól: tudatos mozgásról és figyelemről.</p>
+        <p>Az öltözőben zárható szekrénybe teheted a holmidat, óra után pedig zuhanyozni is tudsz. Pilates zoknit és törölközőt a stúdióban is vehetsz.</p>
+        <p class="lead">Egy kis idő magadra. Egy kis energia. Egy hely, ahol jól érzed magad.</p>
+        
+        <a href="galeria.html" class="btn ghost">Megnézem a stúdiót <span class="arrow">&rarr;</span></a>
       </div>
     </div>
   </section>
@@ -654,23 +752,22 @@
     <div class="wrap">
       <div class="sec-head">
         <span class="eyebrow c">Galéria</span>
-        <h2>Nézz körül a stúdióban</h2>
+        <h2>Nézz körül nálunk.</h2>
       </div>
-      <div class="gsav-grid">
-        <a href="galeria.html" aria-label="Galéria: a reformer terem">
-          <img src="galeria/corelle-06-kicsi.webp" width="760" height="507" alt="A reformer terem a CORELLE stúdióban" loading="lazy" />
-        </a>
-        <a href="galeria.html" aria-label="Galéria: pihenősarok">
-          <img src="galeria/corelle-12-kicsi.webp" width="760" height="507" alt="Pihenősarok az ablaknál" loading="lazy" />
-        </a>
-        <a href="galeria.html" aria-label="Galéria: a stúdió épülete">
-          <img src="galeria/corelle-01-kicsi.webp" width="760" height="507" alt="A stúdió épülete a Temes téren" loading="lazy" />
-        </a>
-        <a href="galeria.html" aria-label="Galéria: kiegészítők">
-          <img src="galeria/corelle-25-kicsi.webp" width="760" height="507" alt="Szőnyeg, kulacs és kiegészítők" loading="lazy" />
-        </a>
+      <div class="mosaic">
+        <a class="wide tall" href="galeria.html" aria-label="Galéria: a reformer terem"><img src="galeria/corelle-06-kicsi.webp" alt="A reformer terem a CORELLE stúdióban" loading="lazy" /></a>
+        <a class="tall" href="galeria.html" aria-label="Galéria: a felfűtött terem"><img src="galeria/corelle-30-kicsi.webp" alt="A szőnyeges terem csillárokkal" loading="lazy" /></a>
+        <a class="tall" href="galeria.html" aria-label="Galéria: kandallós pihenősarok"><img src="galeria/corelle-33-kicsi.webp" alt="Kandallós pihenősarok gyertyával" loading="lazy" /></a>
+        <a href="galeria.html" aria-label="Galéria: a stúdió épülete"><img src="galeria/corelle-01-kicsi.webp" alt="A stúdió épülete a Temes téren" loading="lazy" /></a>
+        <a href="galeria.html" aria-label="Galéria: bejárat"><img src="galeria/corelle-04-kicsi.webp" alt="A stúdió bejárata" loading="lazy" /></a>
+        <a href="galeria.html" aria-label="Galéria: reformer gépek"><img src="galeria/corelle-07-kicsi.webp" alt="Reformer gépek a teremben" loading="lazy" /></a>
+        <a href="galeria.html" aria-label="Galéria: pihenősarok az ablaknál"><img src="galeria/corelle-12-kicsi.webp" alt="Pihenősarok az ablaknál" loading="lazy" /></a>
+        <a href="galeria.html" aria-label="Galéria: törölközők"><img src="galeria/corelle-17-kicsi.webp" alt="Törölközők és kiegészítők a polcon" loading="lazy" /></a>
+        <a href="galeria.html" aria-label="Galéria: folyosó"><img src="galeria/corelle-31-kicsi.webp" alt="Folyosó olajfával" loading="lazy" /></a>
+        <a href="galeria.html" aria-label="Galéria: pilates zoknik"><img src="galeria/corelle-34-kicsi.webp" alt="CORELLE pilates zoknik és kulacsok" loading="lazy" /></a>
+        <a href="galeria.html" aria-label="Galéria: kiegészítők"><img src="galeria/corelle-20-kicsi.webp" alt="Kiegészítők a stúdióban" loading="lazy" /></a>
       </div>
-      <p class="gsav-cta"><a href="galeria.html">Összes kép megtekintése →</a></p>
+      <p class="gsav-cta"><a href="galeria.html">További képek a stúdióról →</a></p>
     </div>
   </section>
 
@@ -717,71 +814,111 @@
       <div class="panels">
         <div class="panel active" data-panel="0">
           <div>
+            <picture>
+              <source type="image/webp" srcset="img/ora-reformer-700.webp 700w, img/ora-reformer-1000.webp 1000w" sizes="(max-width:780px) 92vw, 360px" />
+              <img class="pimg" src="img/ora-reformer-700.jpg" srcset="img/ora-reformer-700.jpg 700w, img/ora-reformer-1000.jpg 1000w" sizes="(max-width:780px) 92vw, 360px"
+                   width="700" height="933" decoding="async" alt="Barbi segít egy vendégnek a reformer gépen a CORELLE Pilates Stúdióban" />
+            </picture>
+            <div class="ptext">
             <span class="ptag">Reformer · Alapóra</span>
             <h3>Reformer All Levels</h3>
             <p>A reformer pilates tökéletes belépőpontja, ugyanakkor minden fejlettségi szint számára ajánlott óra. Jól követhető, teljes testes mozgás, ahol a gyakorlatok az egyéni tapasztalathoz és terhelhetőséghez igazíthatók, így kezdőknek, újrakezdőknek és gyakorlottabb vendégeknek is ideális választás.</p>
+            </div>
           </div>
         </div>
 
         <div class="panel" data-panel="1">
           <div>
+            <picture>
+              <source type="image/webp" srcset="img/ora-strength-700.webp 700w, img/ora-strength-1000.webp 1000w" sizes="(max-width:780px) 92vw, 360px" />
+              <img class="pimg" src="img/ora-strength-700.jpg" srcset="img/ora-strength-700.jpg 700w, img/ora-strength-1000.jpg 1000w" sizes="(max-width:780px) 92vw, 360px"
+                   width="700" height="933" decoding="async" alt="Erősítő gyakorlat reformer gépen a CORELLE Pilates Stúdióban" />
+            </picture>
+            <div class="ptext">
             <span class="ptag">Reformer · Erő</span>
             <h3>Reformer Strength</h3>
             <p>A Reformer Strength az erő, a stabilitás és a kontrollált terhelés köré épül. Fókuszban a core, a tartás, az izomtónus és a tudatos, precíz izommunka. Azoknak ajánljuk, akik szeretik a fókuszáltabb, intenzívebb órákat, ahol a mozdulatok mögött valódi erő épül.</p>
+            </div>
           </div>
         </div>
 
         <div class="panel" data-panel="2">
           <div>
+            <picture>
+              <source type="image/webp" srcset="img/ora-mat-700.webp 700w, img/ora-mat-1000.webp 1000w" sizes="(max-width:780px) 92vw, 360px" />
+              <img class="pimg" src="img/ora-mat-700.jpg" srcset="img/ora-mat-700.jpg 700w, img/ora-mat-1000.jpg 1000w" sizes="(max-width:780px) 92vw, 360px"
+                   width="700" height="933" decoding="async" alt="Oldalsó támasz szőnyegen a CORELLE Pilates Stúdió termében" />
+            </picture>
+            <div class="ptext">
             <span class="ptag">Mat · Talaj pilates</span>
             <h3>Mat Pilates</h3>
             <p>A Mat Pilates a tudatos mozgás alapja, ahol a klasszikus pilates elemeket modern, jól követhető felépítéssel ötvözzük. Core-erősítés, testtartásjavítás, stabilitás és precíz, kontrollált izommunka egy letisztult, hatékony órában.</p>
+            </div>
           </div>
         </div>
 
         <div class="panel hot-panel" data-panel="3">
           <div>
+            <picture>
+              <source type="image/webp" srcset="img/ora-hot-700.webp 700w, img/ora-hot-1000.webp 1000w" sizes="(max-width:780px) 92vw, 360px" />
+              <img class="pimg" src="img/ora-hot-700.jpg" srcset="img/ora-hot-700.jpg 700w, img/ora-hot-1000.jpg 1000w" sizes="(max-width:780px) 92vw, 360px"
+                   width="700" height="933" decoding="async" alt="HOT Pilates óra a felfűtött teremben, CORELLE Pilates Stúdió" />
+            </picture>
+            <div class="ptext">
             <span class="ptag">Melegített terem</span>
             <h3>HOT Pilates</h3>
             <p>Melegített teremben végzett, energikus pilates óra, amely intenzívebb élményt ad, miközben megtartja a pilates kontrollját és fókuszát. A heat, az erő és a tudatos jelenlét találkozik benne, így a mozgás egyszerre lesz dinamikus, koncentrált és igazán felszabadító.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- OKTATÓNK -->
-  <section class="sec team" id="team">
+  <!-- HOT PILATES — a hirdetési forgalom nagy része erre jön, ezért saját blokkot kap -->
+  <section class="hotsec" id="hot">
     <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow c">Oktatónk</span>
-        <h2>Aki végigkísér</h2>
-      </div>
-      <div class="solo">
-        <picture>
-        <source type="image/webp" srcset="img/barbara-640.webp 640w, img/barbara-1000.webp 1000w" sizes="(max-width:900px) 92vw, 420px" />
-        <img class="ph" src="img/barbara-640.jpg" srcset="img/barbara-640.jpg 640w, img/barbara-1000.jpg 1000w" sizes="(max-width:900px) 92vw, 420px"
-             width="1050" height="1400" loading="lazy" decoding="async" alt="Nagy Barbara pilates oktató, a CORELLE Pilates Stúdió alapítója" />
-      </picture>
-        <div>
-          <span class="eyebrow">Corelle</span>
-          <h3>Nagy Barbara</h3>
-          <span class="role">Pilates oktató · tulajdonos</span>
-          <p>Személyre szabott figyelemmel, szakmai tudással és valódi jelenléttel kísér végig minden órán — hogy biztonságban, magabiztosan és önmagaddal kapcsolódva tudj mozogni.</p>
+      <div>
+        <span class="eyebrow">Kecskeméten elsőként</span>
+        <h2>HOT Pilates 38 fokban.</h2>
+        <p>Melegített teremben végzett, energikus pilates óra, amely intenzívebb élményt ad, miközben megtartja a pilates kontrollját és fókuszát. A heat, az erő és a tudatos jelenlét találkozik benne, így a mozgás egyszerre lesz dinamikus, koncentrált és igazán felszabadító.</p>
+        <div class="hotfacts">
+          <span>38 °C</span>
+          <span>50 perc</span>
+          <span>Legfeljebb 6 fő</span>
+          <span>4&nbsp;500 Ft / alkalom</span>
         </div>
+        <p style="font-size:.92rem">Hozz vizet, törölközőt és pilates zoknit.</p>
+        <a href="https://foglalas.corelle.hu/foglalas?tipus=hot" class="btn">HOT időpontot választok <span class="arrow">&rarr;</span></a>
       </div>
+      <picture>
+        <source type="image/webp" srcset="img/hot-800.webp 800w, img/hot-1200.webp 1200w" sizes="(max-width:980px) 92vw, 430px" />
+        <img src="img/hot-800.jpg" srcset="img/hot-800.jpg 800w, img/hot-1200.jpg 1200w" sizes="(max-width:980px) 92vw, 430px"
+             width="1200" height="1500" loading="lazy" decoding="async" alt="A felfűtött terem szőnyegekkel a CORELLE stúdióban" />
+      </picture>
     </div>
   </section>
 
   <!-- ÓRAREND / BEJELENTKEZÉS -->
   <section class="sec booking" id="schedule">
     <div class="wrap">
-      <span class="eyebrow c">Órarend és bejelentkezés</span>
-      <h2>Foglald le a helyedet</h2>
-      <p>Az aktuális heti órarendet és a szabad helyeket a foglalási felületen látod. Jelentkezz be, vagy hozz létre egy fiókot pár másodperc alatt, és foglald le az órádat.</p>
+      <span class="eyebrow c">Órarend és foglalás</span>
+      <h2>Válassz egy időpontot.</h2>
+      <p>Az online foglalási felületen találod az aktuális órákat és a szabad helyeket. A foglaláshoz regisztráció szükséges.</p>
       <div class="cta-row">
         <a href="https://foglalas.corelle.hu/foglalas" class="btn">Órarend és foglalás <span class="arrow">&rarr;</span></a>
-        <a href="https://foglalas.corelle.hu/regisztracio" class="btn ghost">Regisztráció</a>
+        <a href="https://foglalas.corelle.hu/belepes" class="btn ghost">Már van fiókom</a>
+      </div>
+      <div class="firststep" id="elso-alkalom">
+        <b>Először jössz?</b>
+        <ol>
+          <li>Regisztrálj a foglalási felületen.</li>
+          <li>Válaszd ki az órát és az időpontot.</li>
+          <li>Az első óra díját a foglalás után kapott e-mail alapján utald el. A helyedet az összeg beérkezése után igazoljuk vissza.</li>
+        </ol>
+        <p class="fs-note">Az óra előtt 10 perccel érkezz. Óra közben az ajtót zárva tartjuk.</p>
+        <p class="fs-note">Az órakezdés előtti 24 órán belüli lemondás az alkalom elvesztésével jár. Részletek a <a href="feltetelek.html" style="color:var(--gold-ink);border-bottom:1px solid rgba(127,92,32,.45)">vásárlási feltételekben</a>.</p>
+        <p class="fs-note">Elakadtál a foglalásnál? <a href="#contact" style="color:var(--gold-ink);border-bottom:1px solid rgba(127,92,32,.45)">Írj nekem.</a></p>
       </div>
     </div>
   </section>
@@ -791,8 +928,9 @@
     <div class="wrap">
       <div class="sec-head">
         <h2>Áraink</h2>
+        <p>Elsőre egyetlen alkalmat is foglalhatsz. Ha rendszeresen jönnél, 4 vagy 8 alkalmas bérletet választhatsz.</p>
       </div>
-      <div class="pricenote"><b>Fontos!</b> A 24 órán belüli lemondás fizetési kötelezettséggel jár. Részletek a <a href="feltetelek.html" style="color:var(--gold-ink);border-bottom:1px solid rgba(127,92,32,.45)">vásárlási feltételek</a> között.</div>
+      <div class="pricenote"><b>Fontos!</b> A 24 órán belüli lemondás az alkalom elvesztésével jár. Részletek a <a href="feltetelek.html" style="color:var(--gold-ink);border-bottom:1px solid rgba(127,92,32,.45)">vásárlási feltételek</a> között.</div>
       <div class="plans3">
         <div class="plan">
           <div class="cat">Mat / HOT Pilates</div>
@@ -812,32 +950,33 @@
         </div>
         <div class="plan">
           <div class="cat">Kombinált</div>
+          <p style="font-size:.86rem;color:var(--muted);margin:-6px 0 14px">Reformer és szőnyeges órák egy csomagban. A szőnyeges alkalmakra mat vagy HOT órát választhatsz.</p>
           <ul class="pricelist">
-            <li><span>1 reformer + 1 mat/hot</span><b>9&nbsp;900 Ft</b></li>
-            <li><span>2 reformer + 2 mat/hot<em>a vásárlástól számított 30 napig</em></span><b>19&nbsp;900 Ft</b></li>
+            <li><span>1 reformer + 1 mat/hot<em>a vásárlástól számított 30 napig</em></span><b>9&nbsp;900 Ft</b></li>
+            <li><span>2 reformer + 2 mat/hot<em>a vásárlástól számított 30 napig</em></span><b>19&nbsp;500 Ft</b></li>
             <li><span>4 reformer + 4 mat/hot<em>a vásárlástól számított 60 napig</em></span><b>38&nbsp;900 Ft</b></li>
           </ul>
         </div>
       </div>
       <div class="pricenote below">
-        <span class="pl-title">Magánóra</span>
-        Ha egy az egyben szeretnél haladni, vagy ketten jönnétek együtt, arra is van lehetőség. Ugyanaz az óra, csak nektek.
+        <span class="pl-title">Egyéni és páros órák</span>
+        Ha külön órát szeretnél, egyedül vagy ketten is jöhettek. Az időpontot üzenetben vagy telefonon egyeztetjük.
         <div class="pl-group">
-          <span class="pl-lbl">Egyéni <em>1 fő</em></span>
+          <span class="pl-lbl">Egyéni óra <em>1 fő részére</em></span>
           <div class="pl-prices">
             <span>Mat Pilates <b>6&nbsp;000 Ft</b></span>
             <span>Reformer <b>8&nbsp;000 Ft</b></span>
           </div>
         </div>
         <div class="pl-group">
-          <span class="pl-lbl">Páros <em>2 fő, a két főre együtt</em></span>
+          <span class="pl-lbl">Páros óra <em>összesen 2 fő részére</em></span>
           <div class="pl-prices">
             <span>Mat / HOT Pilates <b>5&nbsp;500 Ft</b></span>
             <span>Reformer <b>7&nbsp;500 Ft</b></span>
           </div>
         </div>
-        A HOT óra egyéniben nem indul, azt csak párban tudod kérni.
-        Az időpontot egyeztetés alapján találjuk ki, ezért ezt nem online kell lefoglalni: <a href="#contact">írj vagy hívj</a>, és megbeszéljük, mikor jó nektek.
+        A páros ár a két főre együtt értendő. Egyéni HOT óra nincs, páros HOT órát tudtok kérni.
+        <a href="#contact" class="btn ghost" style="margin-top:16px">Időpontot egyeztetek <span class="arrow">&rarr;</span></a>
       </div>
     </div>
   </section>
@@ -847,32 +986,44 @@
     <div class="wrap">
       <div class="sec-head">
         <span class="eyebrow c">Gyakori kérdések</span>
-        <h2>Mielőtt jössz</h2>
+        <h2>Az első órád előtt</h2>
       </div>
       <div class="faq">
         <details open>
-          <summary>Új vendég vagyok – első óra <span class="pl">+</span></summary>
-          <p>Új vendégként az első foglalásod előre fizetéssel válik véglegessé. Foglaláskor azonnal e-mailben elküldjük az utaláshoz szükséges adatokat, a foglalásod pedig az utalás beérkezését követően kerül visszaigazolásra. A második alkalomtól a stúdióban készpénzzel is fizethetsz. Amennyiben mégsem tudsz részt venni az órán, kérjük, jelezd felénk mielőbb. Köszönjük a megértésedet.</p>
+          <summary>Még nem pilateseztem. Melyik órával kezdjek? <span class="pl">+</span></summary>
+          <p>A Reformer All Levels órát kezdőként is választhatod. Megmutatom a gépet és a gyakorlatokat. Ha mat vagy HOT órán gondolkodsz, írj nekem. Segítek választani.</p>
         </details>
         <details>
-          <summary>Mit vigyek magammal az órára? <span class="pl">+</span></summary>
-          <p>Kényelmes edzőruhát, vizet, ezenkívül törölközőt és pilates zoknit – ha otthon felejtenéd, nálunk is beszerezheted.</p>
+          <summary>Hogyan lesz végleges az első foglalásom? <span class="pl">+</span></summary>
+          <p>Az első órádat előre fizeted ki. A foglalás után e-mailben küldünk egy fizetési linket: ott bankkártyával azonnal fizethetsz, vagy átutalhatod az összeget. A helyedet a fizetés beérkezése után igazoljuk vissza.</p>
         </details>
         <details>
-          <summary>Milyen fizetési lehetőségek vannak? <span class="pl">+</span></summary>
-          <p>Banki átutalással, illetve a második alkalomtól a stúdióban készpénzzel is fizethetsz. Bérletet a foglalási felület Bérletek oldalán online is megrendelhetsz.</p>
-        </details>
-        <details>
-          <summary>Van lehetőség átöltözni és zuhanyozni? <span class="pl">+</span></summary>
-          <p>Igen, stúdiónkban van lehetőség átöltözni, az öltözőkben pedig zárható szekrények is a vendégek rendelkezésére állnak. Amennyiben az óra után felfrissülnél, zuhanyzási lehetőséget is biztosítunk.</p>
-        </details>
-        <details>
-          <summary>Hogyan mondhatom le a foglalásomat? <span class="pl">+</span></summary>
-          <p>A foglalásodat legkésőbb az óra kezdete előtt 24 órával tudod lemondani. A 24 órán belüli lemondás vagy a meg nem jelenés az alkalom elvesztésével jár. A részleteket a <a href="feltetelek.html" style="color:var(--gold-ink);border-bottom:1px solid rgba(127,92,32,.45)">vásárlási és lemondási feltételek</a> között találod.</p>
+          <summary>Mit hozzak magammal? <span class="pl">+</span></summary>
+          <p>Kényelmes edzőruhát, vizet, törölközőt és pilates zoknit. Törölközőt és zoknit a stúdióban is vehetsz.</p>
         </details>
         <details>
           <summary>Mikor érkezzek? <span class="pl">+</span></summary>
-          <p>Ajtóinkat az edzések ideje alatt zárva tartjuk, ezért kérünk, hogy az óra előtt 10 perccel érkezz. Ekkor nyitjuk ki az ajtót, így kényelmesen lesz időd megérkezni, átöltözni és felkészülni az órára.</p>
+          <p>Az óra előtt 10 perccel. Óra közben zárva tartjuk az ajtót, ezért fontos a pontos érkezés.</p>
+        </details>
+        <details>
+          <summary>Van öltöző és zuhanyzó? <span class="pl">+</span></summary>
+          <p>Igen. Át tudsz öltözni és zárható szekrénybe teheted a holmidat. Óra után zuhanyozni is tudsz.</p>
+        </details>
+        <details>
+          <summary>Hogyan fizethetek? <span class="pl">+</span></summary>
+          <p>Bankkártyával online, banki átutalással, a második alkalomtól pedig a stúdióban készpénzzel is fizethetsz. A kártyás fizetés azonnal jóváíródik, így a bérleted rögtön használható. Bérletet a foglalási felület Bérletek oldalán rendelhetsz.</p>
+        </details>
+        <details>
+          <summary>Hogyan mondhatom le az órát? <span class="pl">+</span></summary>
+          <p>A foglalásodat legkésőbb az órakezdés előtt 24 órával mondd le. A 24 órán belüli lemondás az alkalom elvesztésével jár. A lemondás részleteit a <a href="feltetelek.html" style="color:var(--gold-ink);border-bottom:1px solid rgba(127,92,32,.45)">vásárlási feltételekben</a> találod.</p>
+        </details>
+        <details>
+          <summary>A HOT Pilates reformeróra? <span class="pl">+</span></summary>
+          <p>A HOT Pilates szőnyeges óra. Reformer gépet nem használunk. A terem hőmérséklete 38 °C, az óra 50 perces és legfeljebb hatan vagytok.</p>
+        </details>
+        <details>
+          <summary>Jöhetünk ketten külön órára? <span class="pl">+</span></summary>
+          <p>Igen. Mat, HOT és reformer páros órát is kérhettek. Az időpontot üzenetben vagy telefonon egyeztetjük. Az árlistában a páros ár a két főre együtt szerepel.</p>
         </details>
       </div>
     </div>
@@ -884,8 +1035,11 @@
       <div class="loc-grid">
         <div>
           <span class="eyebrow">Itt találsz minket</span>
+          <h2 style="font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:300;margin-top:14px">A Temes téren várlak.</h2>
           <div class="addr">6000 Kecskemét,<br />Temes tér 10.</div>
+          <p class="addr-sub">Az órákra előzetes foglalással tudsz jönni. Érkezz az órakezdés előtt 10 perccel.</p>
           <p class="addr-sub">Nyitvatartás: előzetes bejelentkezés alapján.</p>
+          <p class="addr-sub"><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Kecskem%C3%A9t%2C+Temes+t%C3%A9r+10" target="_blank" rel="noopener" style="color:var(--gold-ink);border-bottom:1px solid rgba(127,92,32,.45)">Útvonal a stúdióhoz</a></p>
         </div>
         <iframe class="map" title="CORELLE Pilates – Kecskemét, Temes tér 10."
           src="https://www.google.com/maps?q=Kecskem%C3%A9t%2C%20Temes%20t%C3%A9r%2010&output=embed"
@@ -899,7 +1053,8 @@
     <div class="wrap">
       <div class="sec-head" style="margin-bottom:48px">
         <span class="eyebrow c">Kapcsolat</span>
-        <h2>Írj nekünk</h2>
+        <h2>Kérdezz az első órád előtt.</h2>
+        <p style="color:var(--muted);margin-top:16px">Órát választanál vagy elakadtál a foglalásnál? Írd meg, miben segíthetek.</p>
       </div>
       <div class="contact-grid">
         <!-- ŰRLAP (bal) — jelenleg mailto-fallback, később bekötjük egy űrlap-szolgáltatásra -->
@@ -908,9 +1063,10 @@
           <input id="cf-name" name="name" type="text" placeholder="A neved" required />
           <label for="cf-email">E-mail</label>
           <input id="cf-email" name="email" type="email" placeholder="E-mail címed" required />
-          <label for="cf-msg">Megjegyzés</label>
-          <textarea id="cf-msg" name="msg" placeholder="Miben segíthetünk?"></textarea>
-          <button type="submit" class="btn">Üzenet küldése <span class="arrow">→</span></button>
+          <label for="cf-msg">Miben segíthetek?</label>
+          <textarea id="cf-msg" name="msg" placeholder="Miben segíthetek?"></textarea>
+          <button type="submit" class="btn">E-mail megnyitása <span class="arrow">→</span></button>
+          <p style="margin-top:14px;font-size:.84rem;color:var(--muted)">A gomb az e-mail-programodat nyitja meg a megadott adatokkal. Az üzenetet ott tudod elküldeni.</p>
         </form>
         <!-- INFO (jobb) -->
         <div class="cinfo">
@@ -928,6 +1084,15 @@
       </div>
     </div>
   </section>
+
+  <!-- ZÁRÓ CTA -->
+  <section class="sec finalcta" id="zaras">
+    <div class="wrap">
+      <h2>Találkozunk a Temes téren.</h2>
+      <p>Nézd meg a következő órákat és válassz egy időpontot.</p>
+      <a href="https://foglalas.corelle.hu/foglalas" class="btn">Órarend és foglalás <span class="arrow">&rarr;</span></a>
+    </div>
+  </section>
 </main>
 
 <!-- FOOTER -->
@@ -937,17 +1102,17 @@
       <div class="foot">
         <img class="foot-logo" src="corelle-wordmark-450.webp" width="177" height="44" loading="lazy" alt="CORELLE Pilates Stúdió" />
         <span class="brand-tag">Pilates Stúdió</span>
+        <p class="foot-tag">Reformer, mat és HOT Pilates Kecskeméten</p>
         <p class="foot-tag">Find your Core.</p>
       </div>
       <div class="foot">
         <h3 class="foot-h">Oldalak</h3>
-        <a href="#about">Rólunk</a>
-        <a href="#classes">Óráink</a>
+        <a href="#bemutatkozas">Barbi</a>
+        <a href="#classes">Órák</a>
         <a href="galeria.html">Galéria</a>
-        <a href="#team">Oktatónk</a>
         <a href="#schedule">Órarend</a>
-        <a href="#pricing">Áraink</a>
-        <a href="#faq">GYIK</a>
+        <a href="#pricing">Árak</a>
+        <a href="#elso-alkalom">Első alkalom</a>
         <a href="#contact">Kapcsolat</a>
       </div>
       <div class="foot">
@@ -963,7 +1128,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 CORELLE Pilates Stúdió — Find your Core. · Kecskemét</span>
+      <span>© 2026 CORELLE Pilates Stúdió · Find your Core. · Kecskemét</span>
       <span>corellebodystudio@gmail.com · +36 70 340 2488</span>
     </div>
   </div>
