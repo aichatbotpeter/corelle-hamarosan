@@ -205,6 +205,11 @@
   .pricenote.below .pl-group .pl-prices{margin:7px 0 0}
   @media(max-width:880px){.pricenote.below{max-width:480px}}
   .plans3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .plans3.four{grid-template-columns:repeat(4,1fr);gap:20px}
+  .plans3.four .plan{padding:36px 26px;position:relative}
+  .plan .cat small.from{position:absolute;top:15px;left:26px;margin:0}
+  .plan .plan-note{font-size:.84rem;color:var(--muted);margin:10px 0 0;padding-top:14px;border-top:1px solid var(--line-soft);line-height:1.5}
+  @media(max-width:1180px){.plans3.four{grid-template-columns:repeat(2,1fr);max-width:880px;margin:0 auto}}
   .plan{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:40px 34px;transition:transform .35s,box-shadow .35s}
   .plan:hover{transform:translateY(-6px);box-shadow:0 24px 50px -28px rgba(28,24,19,.4)}
   .plan.feat{background:linear-gradient(170deg,var(--cream),var(--nude));border-color:transparent}
@@ -216,7 +221,7 @@
   .pricelist span{color:var(--muted);font-size:.96rem}
   .pricelist span em{display:block;font-style:normal;font-size:.72rem;letter-spacing:.04em;color:var(--gold-deep);margin-top:3px;line-height:1.35}
   .pricelist b{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.5rem;white-space:nowrap;color:var(--ink)}
-  @media(max-width:880px){.plans3{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
+  @media(max-width:880px){.plans3,.plans3.four{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
 
   /* FAQ */
   .faq{max-width:840px;margin:0 auto}
@@ -454,16 +459,16 @@
     "itemListElement": [
       {
         "@type": "Offer",
-        "name": "Mat / HOT pilates, 1 alkalom",
+        "name": "Mat pilates, 1 alkalom",
         "price": "4500",
         "priceCurrency": "HUF",
         "availability": "https://schema.org/InStock",
-        "description": "Egy alkalom szőnyeges vagy HOT pilates órára.",
+        "description": "Egy alkalom szőnyeges pilates órára (október 9-ig HOT órára is).",
         "url": "https://corelle.hu/#pricing"
       },
       {
         "@type": "Offer",
-        "name": "Mat / HOT pilates, 4 alkalmas bérlet",
+        "name": "Mat pilates, 4 alkalmas bérlet",
         "price": "16900",
         "priceCurrency": "HUF",
         "availability": "https://schema.org/InStock",
@@ -472,11 +477,41 @@
       },
       {
         "@type": "Offer",
-        "name": "Mat / HOT pilates, 8 alkalmas bérlet",
+        "name": "Mat pilates, 8 alkalmas bérlet",
         "price": "31900",
         "priceCurrency": "HUF",
         "availability": "https://schema.org/InStock",
         "description": "Nyolc alkalom, a vásárlástól számított 60 napig.",
+        "url": "https://corelle.hu/#pricing"
+      },
+      {
+        "@type": "Offer",
+        "name": "HOT pilates, 1 alkalom",
+        "price": "5500",
+        "priceCurrency": "HUF",
+        "validFrom": "2026-10-10",
+        "availability": "https://schema.org/InStock",
+        "description": "Egy alkalom HOT pilates órára, 38 fokos teremben.",
+        "url": "https://corelle.hu/#pricing"
+      },
+      {
+        "@type": "Offer",
+        "name": "HOT pilates, 4 alkalmas bérlet",
+        "price": "20900",
+        "priceCurrency": "HUF",
+        "validFrom": "2026-10-10",
+        "availability": "https://schema.org/InStock",
+        "description": "Négy alkalom HOT vagy mat órára, a vásárlástól számított 30 napig.",
+        "url": "https://corelle.hu/#pricing"
+      },
+      {
+        "@type": "Offer",
+        "name": "HOT pilates, 8 alkalmas bérlet",
+        "price": "38900",
+        "priceCurrency": "HUF",
+        "validFrom": "2026-10-10",
+        "availability": "https://schema.org/InStock",
+        "description": "Nyolc alkalom HOT vagy mat órára, a vásárlástól számított 60 napig.",
         "url": "https://corelle.hu/#pricing"
       },
       {
@@ -856,7 +891,8 @@
         <h2>HOT Pilates 38 fokban.</h2>
         <p>Melegített teremben végzett, energikus pilates óra, amely intenzívebb élményt ad, miközben megtartja a pilates kontrollját és fókuszát. A heat, az erő és a tudatos jelenlét találkozik benne, így a mozgás egyszerre lesz dinamikus, koncentrált és igazán felszabadító.</p>
         <div class="hotfacts">
-          <span>4&nbsp;500 Ft / alkalom</span>
+          <span>Okt. 9-ig 4&nbsp;500 Ft / alkalom</span>
+          <span>Okt. 10-től 5&nbsp;500 Ft / alkalom</span>
         </div>
         <p style="font-size:.92rem">Hozz vizet, törölközőt és pilates zoknit.</p>
         <a href="https://foglalas.corelle.hu/foglalas?tipus=hot" class="btn">HOT időpontot választok <span class="arrow">&rarr;</span></a>
@@ -901,14 +937,24 @@
         <p>Elsőre egyetlen alkalmat is foglalhatsz. Ha rendszeresen jönnél, 4 vagy 8 alkalmas bérletet választhatsz.</p>
       </div>
       <div class="pricenote"><b>Fontos!</b> A 24 órán belüli lemondás az alkalom elvesztésével jár. Részletek a <a href="feltetelek.html" style="color:var(--gold-ink);border-bottom:1px solid rgba(127,92,32,.45)">vásárlási feltételek</a> között.</div>
-      <div class="plans3">
+      <div class="plans3 four">
         <div class="plan">
-          <div class="cat">Mat / HOT Pilates</div>
+          <div class="cat">Mat Pilates</div>
           <ul class="pricelist">
             <li><span>1 alkalom</span><b>4&nbsp;500 Ft</b></li>
             <li><span>4 alkalmas bérlet<em>a vásárlástól számított 30 napig</em></span><b>16&nbsp;900 Ft</b></li>
             <li><span>8 alkalmas bérlet<em>a vásárlástól számított 60 napig</em></span><b>31&nbsp;900 Ft</b></li>
           </ul>
+          <p class="plan-note">Október 9-ig HOT órára is jó. Az addig vásárolt bérlet a lejáratáig HOT órára is felhasználható.</p>
+        </div>
+        <div class="plan">
+          <div class="cat"><small class="from">Október 10-től</small>HOT Pilates</div>
+          <ul class="pricelist">
+            <li><span>1 alkalom</span><b>5&nbsp;500 Ft</b></li>
+            <li><span>4 alkalmas bérlet<em>a vásárlástól számított 30 napig</em></span><b>20&nbsp;900 Ft</b></li>
+            <li><span>8 alkalmas bérlet<em>a vásárlástól számított 60 napig</em></span><b>38&nbsp;900 Ft</b></li>
+          </ul>
+          <p class="plan-note">A HOT bérlet mat órára is jó.</p>
         </div>
         <div class="plan feat">
           <div class="cat">Reformer</div>
