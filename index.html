@@ -209,6 +209,14 @@
   .pricenote.below .pl-lbl em{font-style:normal;letter-spacing:.03em;text-transform:none;color:var(--muted);margin-left:9px;font-size:.8rem}
   .pricenote.below .pl-group .pl-prices{margin:7px 0 0}
   @media(max-width:880px){.pricenote.below{max-width:480px}}
+  /* Ajándékutalvány (Barbi, 2026-10-10) */
+  .gift{max-width:760px;margin:24px auto 0;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:28px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:24px;scroll-margin-top:96px}
+  .gift img{display:block;width:100%;height:auto;border-radius:3px;box-shadow:0 14px 30px -18px rgba(28,24,19,.45)}
+  .gift .pl-title{display:block;font-family:'Cormorant Garamond',serif;font-size:1.45rem;color:var(--ink);margin-bottom:6px}
+  .gift p{font-size:.95rem;color:var(--ink);margin:0}
+  .gift p + p{margin-top:8px;font-size:.86rem;color:var(--muted)}
+  .gift .btn{margin-top:18px}
+  @media(max-width:880px){.gift{max-width:480px;grid-template-columns:1fr;gap:18px;padding:18px}}
   .plans3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   .plans3.four{grid-template-columns:repeat(4,1fr);gap:20px}
   .plans3.four .plan{padding:36px 26px;position:relative}
@@ -686,6 +694,7 @@
       <a href="#classes">Órák</a>
       <a href="#hot">HOT Pilates</a>
       <a href="#pricing">Árak</a>
+      <a href="#utalvany">Utalvány</a>
       <a href="#schedule">Órarend</a>
       <a href="#contact">Kapcsolat</a>
     </nav>
@@ -700,6 +709,7 @@
   <a href="#classes">Órák</a>
   <a href="#hot">HOT Pilates</a>
   <a href="#pricing">Árak</a>
+  <a href="#utalvany">Ajándékutalvány</a>
   <a href="#schedule">Órarend</a>
   <a href="#contact">Kapcsolat</a>
   <a href="https://foglalas.corelle.hu/belepes" style="color:var(--gold)">Bejelentkezés</a>
@@ -1003,6 +1013,18 @@
         Egyéni HOT óra nincs, páros HOT órát tudtok kérni.
         <a href="#contact" class="btn ghost" style="margin-top:16px">Időpontot egyeztetek <span class="arrow">&rarr;</span></a>
       </div>
+      <div class="gift" id="utalvany">
+        <picture>
+          <source type="image/webp" srcset="img/utalvany-640.webp 640w, img/utalvany-960.webp 960w" sizes="(max-width:880px) 440px, 380px" />
+          <img src="img/utalvany-640.jpg" srcset="img/utalvany-640.jpg 640w, img/utalvany-960.jpg 960w" sizes="(max-width:880px) 440px, 380px" width="640" height="226" loading="lazy" alt="CORELLE ajándékutalvány" />
+        </picture>
+        <div>
+          <span class="pl-title">Ajándékutalvány</span>
+          <p>Bármelyik alkalmunk és bérletünk megvehető ajándékba. A kifizetés után e-mailben küldjük a kódot és a nyomtatható utalványt, amely egy évig váltható be.</p>
+          <p>A stúdióban személyesen is megveheted, készpénzzel vagy kártyával.</p>
+          <a href="https://foglalas.corelle.hu/ajandekutalvany" class="btn ghost">Utalványt veszek <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1125,6 +1147,7 @@
         <a href="galeria.html">Galéria</a>
         <a href="#schedule">Órarend</a>
         <a href="#pricing">Árak</a>
+        <a href="#utalvany">Ajándékutalvány</a>
         <a href="#elso-alkalom">Első alkalom</a>
         <a href="#contact">Kapcsolat</a>
       </div>
