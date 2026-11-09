@@ -182,6 +182,17 @@
   .solo p{color:var(--muted);margin-top:20px;max-width:42ch}
   @media(max-width:780px){.solo{grid-template-columns:1fr;gap:30px;max-width:420px}}
 
+  /* OKTATÓINK — kártyák */
+  .team{background:var(--cream)}
+  .team .sec-h{text-align:center;max-width:620px;margin:0 auto 52px}
+  .team .sec-h h2{font-size:clamp(2.2rem,4.4vw,3.2rem);font-weight:300;margin-top:14px}
+  .tgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:44px;max-width:900px;margin:0 auto}
+  .tcard img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:4px;border:1px solid var(--line)}
+  .tcard .role{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-ink);margin-top:22px;display:block}
+  .tcard h3{font-size:clamp(1.8rem,3vw,2.3rem);font-weight:300;margin-top:6px}
+  .tcard p{color:var(--muted);margin-top:12px;max-width:40ch}
+  @media(max-width:720px){.tgrid{grid-template-columns:1fr;gap:48px;max-width:420px}}
+
   /* ÓRAREND / BEJELENTKEZÉS */
   .cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:36px}
   .cta-row .btn{margin-top:0}
@@ -693,6 +704,7 @@
     <nav class="nav">
       <a href="#classes">Órák</a>
       <a href="#hot">HOT Pilates</a>
+      <a href="#oktatok">Oktatók</a>
       <a href="#pricing">Árak</a>
       <a href="#utalvany">Utalvány</a>
       <a href="#schedule">Órarend</a>
@@ -708,6 +720,7 @@
   <span class="close" id="mclose">Bezár ✕</span>
   <a href="#classes">Órák</a>
   <a href="#hot">HOT Pilates</a>
+  <a href="#oktatok">Oktatók</a>
   <a href="#pricing">Árak</a>
   <a href="#utalvany">Ajándékutalvány</a>
   <a href="#schedule">Órarend</a>
@@ -920,6 +933,38 @@
         <img src="img/hot-800.jpg" srcset="img/hot-800.jpg 800w, img/hot-1200.jpg 1200w" sizes="(max-width:980px) 92vw, 430px"
              width="1200" height="1500" loading="lazy" decoding="async" alt="A felfűtött terem szőnyegekkel a CORELLE stúdióban" />
       </picture>
+    </div>
+  </section>
+
+  <!-- OKTATÓINK -->
+  <section class="sec team" id="oktatok">
+    <div class="wrap">
+      <div class="sec-h">
+        <span class="eyebrow c">Oktatóink</span>
+        <h2>Akikkel nálunk edzel.</h2>
+      </div>
+      <div class="tgrid">
+        <div class="tcard">
+          <picture>
+            <source type="image/webp" srcset="img/barbi-hello-800.webp 800w, img/barbi-hello-1200.webp 1200w" sizes="(max-width:720px) 92vw, 430px" />
+            <img src="img/barbi-hello-800.jpg" srcset="img/barbi-hello-800.jpg 800w, img/barbi-hello-1200.jpg 1200w" sizes="(max-width:720px) 92vw, 430px"
+                 width="1200" height="1500" loading="lazy" decoding="async" alt="Nagy Barbara, a CORELLE Pilates Stúdió alapítója és oktatója" />
+          </picture>
+          <span class="role">Alapító · Reformer, Mat és HOT Pilates</span>
+          <h3>Nagy Barbara</h3>
+          <p>A Corelle alapítója. Reformer, mat és HOT Pilates órákat tart, kis csoportban, figyelemmel.</p>
+        </div>
+        <div class="tcard">
+          <picture>
+            <source type="image/webp" srcset="img/dori-800.webp 800w, img/dori-1200.webp 1200w" sizes="(max-width:720px) 92vw, 430px" />
+            <img src="img/dori-800.jpg" srcset="img/dori-800.jpg 800w, img/dori-1200.jpg 1200w" sizes="(max-width:720px) 92vw, 430px"
+                 width="1200" height="1500" loading="lazy" decoding="async" alt="Benyovszky Dóra, Mat Pilates oktató a CORELLE Pilates Stúdióban" />
+          </picture>
+          <span class="role">Mat Pilates</span>
+          <h3>Benyovszky Dóra</h3>
+          <p>Novembertől ő is a Corelle csapatát erősíti, Mat Pilates órákat tart. Életmód- és táplálkozási tanácsadó is.</p>
+        </div>
+      </div>
     </div>
   </section>
 
