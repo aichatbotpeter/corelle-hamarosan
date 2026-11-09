@@ -188,9 +188,11 @@
   .team .sec-h h2{font-size:clamp(2.2rem,4.4vw,3.2rem);font-weight:300;margin-top:14px}
   .tgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:44px;max-width:900px;margin:0 auto}
   .tcard img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:4px;border:1px solid var(--line)}
-  .tcard .role{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-ink);margin-top:22px;display:block}
-  .tcard h3{font-size:clamp(1.8rem,3vw,2.3rem);font-weight:300;margin-top:6px}
+  .tcard .role{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-ink);margin-top:10px;display:block}
+  .tcard h3{font-size:clamp(1.8rem,3vw,2.3rem);font-weight:300;margin-top:22px}
   .tcard p{color:var(--muted);margin-top:12px;max-width:40ch}
+  .tcard .bio p{max-width:none}
+  .tcard .bio b{font-weight:500;color:var(--ink,inherit)}
   @media(max-width:720px){.tgrid{grid-template-columns:1fr;gap:48px;max-width:420px}}
 
   /* ÓRAREND / BEJELENTKEZÉS */
@@ -950,19 +952,24 @@
             <img src="img/barbi-hello-800.jpg" srcset="img/barbi-hello-800.jpg 800w, img/barbi-hello-1200.jpg 1200w" sizes="(max-width:720px) 92vw, 430px"
                  width="1200" height="1500" loading="lazy" decoding="async" alt="Nagy Barbara, a CORELLE Pilates Stúdió alapítója és oktatója" />
           </picture>
-          <span class="role">Alapító · Reformer, Mat és HOT Pilates</span>
           <h3>Nagy Barbara</h3>
-          <p>A Corelle alapítója. Reformer, mat és HOT Pilates órákat tart, kis csoportban, figyelemmel.</p>
+          <span class="role">Pilates oktató, tulajdonos</span>
         </div>
         <div class="tcard">
           <picture>
             <source type="image/webp" srcset="img/dori-800.webp 800w, img/dori-1200.webp 1200w" sizes="(max-width:720px) 92vw, 430px" />
             <img src="img/dori-800.jpg" srcset="img/dori-800.jpg 800w, img/dori-1200.jpg 1200w" sizes="(max-width:720px) 92vw, 430px"
-                 width="1200" height="1500" loading="lazy" decoding="async" alt="Benyovszky Dóra, Mat Pilates oktató a CORELLE Pilates Stúdióban" />
+                 width="1200" height="1500" loading="lazy" decoding="async" alt="Benyovszky Dóra, pilates oktató a CORELLE Pilates Stúdióban" />
           </picture>
-          <span class="role">Mat Pilates</span>
           <h3>Benyovszky Dóra</h3>
-          <p>Novembertől ő is a Corelle csapatát erősíti, Mat Pilates órákat tart. Életmód- és táplálkozási tanácsadó is.</p>
+          <span class="role">Pilates oktató</span>
+          <div class="bio">
+            <p>Szia, Dóri vagyok, és a CORELLE-ben Mat Pilates órákon találkozhatsz velem. 🤍</p>
+            <p>A mozgás mindig is fontos része volt az életemnek. Gyerekként a tánc, később a futás, az aerobik és az erőnléti edzések kísértek végig az utamon. 2017-ben egy életmódváltásnak köszönhetően 33 kg-tól szabadultam meg, és azóta a sport a mindennapjaim része.</p>
+            <p>A pilatesszel 2025-ben találkoztam, és hamar magával ragadott a tudatos, kontrollált mozgás világa. 2026 tavaszán talaj Pilates oktatói képesítést szereztem, nyáron pedig már szabadtéri órákat tartottam Kecskeméten.</p>
+            <p><b>Számomra a Pilates több mint edzés:</b> egyszerre erősít, formál és segít kiszakadni a mindennapok rohanásából.</p>
+            <p>Az óráimon szeretnék egy olyan támogató légkört teremteni, ahol mindenki a saját tempójában fejlődhet, feltöltődhet, és egyre magabiztosabban mozoghat. 🤍</p>
+          </div>
         </div>
       </div>
     </div>
